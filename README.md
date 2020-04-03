@@ -19,7 +19,7 @@
 
 ## Preview
 
-![Desktop-1](https://github.com/opxop/dotfiles/tree/master/screenshots/crot-1.png)
+![Desktop-1](https://github.com/opxop/dotfiles/screenshots/crot-1.png)
 
 ## License
 The code is available under the [MIT License](https://github.com/fikriomar16/dotfiles/blob/master/LICENSE.md)
