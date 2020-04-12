@@ -7,19 +7,18 @@ antigen use oh-my-zsh
 
 # Load bundles from the default repo (oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
-antigen bundle pip
+antigen bundle git-extras
 antigen bundle command-not-found
 antigen bundle common-aliases
-antigen bundle git-extras
-antigen bundle git-flow
+antigen bundle lol
 antigen bundle npm
-antigen bundle docker
+antigen bundle supercrabtree/k
 
 # Load bundles from external repos.
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
 
 # Select theme.
 antigen bundle mafredri/zsh-async
