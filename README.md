@@ -13,7 +13,7 @@ This repository contains my dotfiles.
 |---------------	|---------------------------------------------------------------	|
 | OS            	| KDE Neon 5.18.4                                               	|
 | WM            	| KWin                                                          	|
-| Kernel        	| 5.3.0-46                                                      	|
+| Kernel        	| 5.3.0                                                         	|
 | Shell         	| zsh                                                           	|
 | Theme         	| [Canta](https://github.com/vinceliuice/Canta-kde)             	|
 | Icon          	| [Tela](https://github.com/vinceliuice/Tela-circle-icon-theme) 	|
@@ -23,6 +23,8 @@ This repository contains my dotfiles.
 ## Preview
 
 ![Desktop-1](/screenshots/crot-1.png)
+
+![Desktop-1](/screenshots/crot-2.png)
 
 You can download wallpaper [here](https://www.pling.com/p/1363018/)
 
