@@ -12,7 +12,7 @@ antigen bundle command-not-found
 antigen bundle common-aliases
 antigen bundle lol
 antigen bundle npm
-antigen bundle supercrabtree/k
+antigen bundle nvm
 
 # Load bundles from external repos.
 antigen bundle zsh-users/zsh-completions
@@ -20,9 +20,13 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 
-# Select theme.
-antigen bundle mafredri/zsh-async
-antigen bundle marszall87/lambda-pure
+# Load Themes
+antigen theme denysdovhan/spaceship-prompt
+
+# Load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Tell Antigen that you're done.
 antigen apply
