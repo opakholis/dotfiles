@@ -8,7 +8,7 @@ This repository contains my dotfiles.
 </p>
 
 ## Environment Information
-* OS : KDE Neon 5.18
+* OS : KDE Neon 5.19
 * Windows Manager : KWin
 * Kernel : 5.3.0
 * Shell : zsh
