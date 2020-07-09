@@ -8,6 +8,8 @@ antigen use oh-my-zsh
 # Load bundles from the default repo (oh-my-zsh).
 antigen bundle git
 antigen bundle git-extras
+antigen bundle heroku
+antigen bundle pip
 antigen bundle command-not-found
 antigen bundle common-aliases
 antigen bundle lol
@@ -35,6 +37,13 @@ antigen bundle Sparragus/zsh-auto-nvm-use
 
 # Load custom aliases
 [[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Load setup mobile development
+export PATH="$PATH:/opt/android-studio/bin" 
+export PATH="$PATH:/opt/flutter/bin"
+export PATH="$HOME/Android/tools:$PATH"
+export PATH="$HOME/Android/platform-tools:$PATH"
 
 # Tell Antigen that you're done.
 antigen apply
