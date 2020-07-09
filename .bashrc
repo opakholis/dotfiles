@@ -115,4 +115,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/common-aliases:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git-extras:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git-flow:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/npm:/home/op/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/docker:/home/op/.antigen/bundles/zsh-users/zsh-completions:/home/op/.antigen/bundles/zsh-users/zsh-autosuggestions:/home/op/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/home/op/.antigen/bundles/mafredri/zsh-async:/home/op/.antigen/bundles/marszall87/lambda-pure
