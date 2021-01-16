@@ -1,0 +1,205 @@
+# ArchLabs i3 config
+
+### GENERAL
+
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+# font
+font pango:"JetBrainsMono Nerd Font" 10
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# orientation for new workspaces
+default_orientation horizontal
+
+# popup during fullscreen
+popup_during_fullscreen smart
+
+### AUTOSTART
+
+exec_always --no-startup-id picom -b
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec --no-startup-id dunst 
+exec --no-startup-id xfce4-power-manager 
+exec --no-startup-id xfsettingsd
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+
+### BINDINGS
+
+# core
+bindsym $super+Shift+w	exec --no-startup-id exo-open --launch WebBrowser
+bindsym $super+Shift+e	exec --no-startup-id exo-open --launch FileManager
+bindsym $super+Return	exec --no-startup-id exo-open --launch TerminalEmulator
+
+# launchers
+bindsym $alt+F1 exec --no-startup-id $HOME/.config/polybar/scripts/launcher.sh
+
+# launcher rofi default
+bindsym Control+space exec --no-startup-id rofi_run -r
+
+# logout
+bindsym $super+x exec --no-startup-id $HOME/.config/polybar/scripts/powermenu.sh
+
+# Screenshot
+bindsym $super+Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+
+# audio
+bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext        exec --no-startup-id playerctl next
+bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
+bindsym XF86AudioStop        exec --no-startup-id playerctl stop
+bindsym XF86AudioMute        exec --no-startup-id pamixer -t
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
+
+# backlight
+bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+
+## WORKSPACE BINDINGS
+
+# set workspace
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+# switch to workspace
+bindsym $super+1 workspace number $ws1
+bindsym $super+2 workspace number $ws2
+bindsym $super+3 workspace number $ws3
+bindsym $super+4 workspace number $ws4
+bindsym $super+5 workspace number $ws5
+bindsym $super+6 workspace number $ws6
+
+# switch to next or previous workspace
+bindsym $super+$alt+Left workspace prev
+bindsym $super+$alt+Right workspace next
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace number $ws1
+bindsym $super+Shift+2 move container to workspace number $ws2
+bindsym $super+Shift+3 move container to workspace number $ws3
+bindsym $super+Shift+4 move container to workspace number $ws4
+bindsym $super+Shift+5 move container to workspace number $ws5
+bindsym $super+Shift+6 move container to workspace number $ws6
+
+## CONFIG BINDINGS
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+
+# reload the configuration file
+bindsym $super+Shift+c reload
+
+## CONTAINER/WINDOW CONTROL BINDINGS
+
+# floating
+bindsym $super+space floating toggle
+
+# scratchpad
+bindsym $super+Shift+z move scratchpad
+bindsym $super+z scratchpad show
+
+# change focus
+bindsym $super+Left  focus left
+bindsym $super+Down  focus down
+bindsym $super+Up    focus up
+bindsym $super+Right focus right
+bindsym $super+p     focus parent
+bindsym $super+o     focus child
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# move focus window
+bindsym $super+Shift+Up    move up  
+bindsym $super+Shift+Down  move down 
+bindsym $super+Shift+Left  move left 
+bindsym $super+Shift+Right move right
+
+# kill focused window
+bindsym $super+c kill
+bindsym $alt+F4 kill
+
+# change container layout split
+bindsym $super+s layout toggle split
+
+# container layout
+bindsym $super+h split h
+bindsym $super+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+### BORDER & GAPS
+
+# enable border
+for_window [class="^.*"] border pixel 3
+
+## border style
+
+# use window title, but no border
+bindsym $super+t border normal 3
+
+# use no window title and a thick border
+bindsym $super+y border pixel 3
+
+# use neither window title nor border
+bindsym $super+u border none
+
+# space gaps
+gaps inner 8
+gaps outer 0
+
+# change gaps
+bindsym $super+plus                gaps inner current plus  5
+bindsym $super+minus               gaps inner current minus 5
+bindsym $super+Shift+plus          gaps outer current plus  5
+bindsym $super+Shift+minus         gaps outer current minus 5
+bindsym $super+Control+plus        gaps inner all     plus  5
+bindsym $super+Control+minus       gaps inner all     minus 5
+bindsym $super+Control+Shift+plus  gaps outer all     plus  5
+bindsym $super+Control+Shift+minus gaps outer all     minus 5
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  bindsym Up resize shrink height 10 px or 1 ppt
+  bindsym Down resize grow height 10 px or 1 ppt
+  bindsym Left resize shrink width 10 px or 1 ppt
+  bindsym Right resize grow width 10 px or 1 ppt
+  bindsym Return mode "default"
+}
+bindsym $super+r mode "resize"
+
+### COLOR
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #6272a4 #6272a4 #f8f8f2 #6272a4   #6272a4
+client.focused_inactive #44475a #5f676a #f8f8f2 #484e50   #5f676a
+client.unfocused        #44475a #222222 #f8f8f2 #292d2e   #222222
+client.urgent           #2f343a #50fa7b #f8f8f2 #50fa7b   #50fa7b
+client.placeholder      #44475a #44475a #f8f8f2 #44475a   #44475a
+client.background       #f8f8f2
+
+### APPLICATION SETTINGS
+
+# assign applications to specific workspace
+assign [class="(?i)(?:termite)"] → $ws1
+assign [class="(?i)(?:firefox)"] → $ws2
+assign [class="(?i)(?:code)"]    → $ws3
+assign [class="(?i)(?:thunar)"]  → $ws4
+
+# focus, floating, & sticky
+for_window [class="(?i)(?:qt5ct|pinentry|urxvt|nitrogen)"]    floating enable, focus
+for_window [title="(?i)(?:copying|deleting|moving)"]          floating enable
+for_window [window_role="(?i)(?:pop-up|setup)"]               floating enable
