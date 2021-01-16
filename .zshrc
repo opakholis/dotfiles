@@ -25,7 +25,7 @@ plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 autoload -U compinit && compinit
 
 # for change color of zsh-autosuggestion
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,italic"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +47,7 @@ PRIV="sudo"
 alias c="clear"
 alias q="exit"
 alias pacrem="$PRIV pacman -Rcns"
+alias yayus="yay -S"
 alias yayupd="yay -Sy"
 alias yayupg="yay -Syu"
 alias pingoogle="ping 8.8.8.8"
@@ -57,13 +58,18 @@ alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 
 # Color toys aliases
 alias bloks="~/.color-toys/bloks"
+alias colorbar="~/.color-toys/colorbar"
 alias colortest="~/.color-toys/colortest"
 alias colortest-slim="~/.color-toys/colortest-slim"
 alias colorview="~/.color-toys/colorview"
 alias panes="~/.color-toys/panes"
 alias pipes1="~/.color-toys/pipes1"
 alias pipes2="~/.color-toys/pipes2"
+alias pipes2-slim="~/.color-toys/pipes2-slim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# fnm
+export PATH=/home/opxop/.fnm:$PATH
+eval "`fnm env`"
