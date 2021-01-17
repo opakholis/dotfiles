@@ -25,7 +25,7 @@ plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 autoload -U compinit && compinit
 
 # for change color of zsh-autosuggestion
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,italic"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,7 +69,3 @@ alias pipes2-slim="~/.color-toys/pipes2-slim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fnm
-export PATH=/home/opxop/.fnm:$PATH
-eval "`fnm env`"
