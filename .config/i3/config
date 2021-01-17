@@ -34,12 +34,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 bindsym $super+Shift+w	exec --no-startup-id exo-open --launch WebBrowser
 bindsym $super+Shift+e	exec --no-startup-id exo-open --launch FileManager
 bindsym $super+Return	exec --no-startup-id exo-open --launch TerminalEmulator
+bindsym $super+Shift+t 	exec urxvt
 
 # launchers
 bindsym $alt+F1 exec --no-startup-id $HOME/.config/polybar/scripts/launcher.sh
 
 # launcher rofi default
-bindsym Control+space exec --no-startup-id rofi_run -r
+bindsym $super+F1 exec --no-startup-id rofi_run -r
 
 # logout
 bindsym $super+x exec --no-startup-id $HOME/.config/polybar/scripts/powermenu.sh
