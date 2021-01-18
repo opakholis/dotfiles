@@ -50,11 +50,17 @@ alias pacrem="$PRIV pacman -Rcns"
 alias yayus="yay -S"
 alias yayupd="yay -Sy"
 alias yayupg="yay -Syu"
-alias pingoogle="ping 8.8.8.8"
+alias pg="ping 8.8.8.8"
 alias trimall="$PRIV fstrim -va"
 alias nanosu="$PRIV nano"
 alias nvimsu="$PRIV nvim"
 alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
+alias aria="aria2c -s16 -x16"
+
+# LEMP aliases
+alias runserve="$PRIVE systemctl start nginx mariadb php-fpm"
+alias stopserve="$PRIVE systemctl stop nginx mariadb php-fpm"
+alias reserve="$PRIVE systemctl restart nginx mariadb php-fpm"
 
 # Color toys aliases
 alias bloks="~/.color-toys/bloks"
