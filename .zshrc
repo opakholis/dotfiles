@@ -21,9 +21,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
-# prerequisite zsh-completions
-autoload -U compinit && compinit
-
 # for change color of zsh-autosuggestion
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
