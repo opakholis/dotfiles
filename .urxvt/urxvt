@@ -1,0 +1,24 @@
+!! -----------------------------------------------
+!! URxvt config
+!! -----------------------------------------------
+
+! main
+
+URxvt*depth                      : 32
+URxvt*scrollTtyKeypress          : true
+URxvt*scrollTtyOutput            : false
+URxvt*scrollWithBuffer           : true
+URxvt.borderless                 : false
+URxvt.internalBorder             : 20
+URxvt.scrollBar                  : false
+URxvt.scrollBar_floating         : false
+URxvt.scrollBar_right            : false
+URxvt.scrollstyle                : plain
+URxvt.title                      : System Command Promt
+URxvt.iconFile                   : terminal
+URxvt.iso14755                   : false
+URxvt.iso14755_52                : false
+
+! cursor
+URxvt.cursorBlink                : true
+URxvt.cursorUnderline            : true
