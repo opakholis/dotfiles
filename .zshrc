@@ -53,13 +53,15 @@ alias nanosu="$PRIV nano"
 alias nvimsu="$PRIV nvim"
 alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 alias aria="aria2c -s16 -x16"
+alias ls='exa'
+alias merge='xrdb merge ~/.Xresources'
 
-# LEMP aliases
+# LEMP
 alias runserve="$PRIVE systemctl start nginx mariadb php-fpm"
 alias stopserve="$PRIVE systemctl stop nginx mariadb php-fpm"
 alias reserve="$PRIVE systemctl restart nginx mariadb php-fpm"
 
-# Color toys aliases
+# Color toys
 alias bloks="~/.color-toys/bloks"
 alias colorbar="~/.color-toys/colorbar"
 alias colortest="~/.color-toys/colortest"
@@ -72,3 +74,10 @@ alias pipes2-slim="~/.color-toys/pipes2-slim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fnm
+export PATH=/home/opxop/.fnm:$PATH
+eval "`fnm env`"
+
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
