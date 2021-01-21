@@ -1,0 +1,17 @@
+!! -----------------------------------------------
+!! Font config
+!! -----------------------------------------------
+
+! fonts
+URxvt.font                       : xft:JetBrainsMono Nerd Font Mono:size=10
+URxvt.letterSpace                : -1
+URxvt.lineSpace                  : 0
+URxvt.allow_bold                 : true
+
+Xft.dpi: 86
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
