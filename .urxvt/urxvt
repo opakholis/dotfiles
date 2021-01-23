@@ -3,7 +3,10 @@
 !! -----------------------------------------------
 
 ! main
-
+URxvt.font                       : xft:JetBrainsMono Nerd Font Mono:size=10
+URxvt.letterSpace                : -1
+URxvt.lineSpace                  : 0
+URxvt.allow_bold                 : true
 URxvt*depth                      : 32
 URxvt*scrollTtyKeypress          : true
 URxvt*scrollTtyOutput            : false
