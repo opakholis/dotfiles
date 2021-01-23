@@ -3,10 +3,6 @@
 !! -----------------------------------------------
 
 ! fonts
-URxvt.font                       : xft:JetBrainsMono Nerd Font Mono:size=10
-URxvt.letterSpace                : -1
-URxvt.lineSpace                  : 0
-URxvt.allow_bold                 : true
 
 Xft.dpi: 86
 Xft.autohint: 0
