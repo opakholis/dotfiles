@@ -29,6 +29,13 @@ In every file there is its path.
 notification ~ dunst
 ```
 
+<table>
+  <tr>
+    <td> <img src="https://raw.githubusercontent.com/opxop/dotfiles/main/.skrinsut/1.png" alt="1"></td>
+    <td> <img src="https://raw.githubusercontent.com/opxop/dotfiles/main/.skrinsut/2.png" alt="1"></td>
+  </tr>
+</table>
+
 ## Credits / Thanks
 
 - [Arch Wiki](https://wiki.archlinux.org/)
