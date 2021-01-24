@@ -20,7 +20,6 @@ In every file there is its path.
           wm ~ i3-gaps
           dm ~ lightdm
           fm ~ thunar
-        kern ~ 5.10.9
         term ~ termite/URxvt
       editor ~ code/nvim
      browser ~ firefox
