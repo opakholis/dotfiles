@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Select window or draw and add borders then show preview
+
+SAVE_DIR=~/Pictures/Screenshots/Framed
+ICON="~/.icons/custom/drops/files.png"
+FRAME_COLOR="#ffffff"
+
+{
+    [[ ! -e $SAVE_DIR ]] && mkdir $SAVE_DIR
+    sleep .5s
+    
+    rm /tmp/*_scrot*.png &> /dev/null
+    scrot -q 100 -sfbe 'mv $f /tmp/' -l style=dash,width=3,color="#6272a4" &> /dev/null && \
+    notify-send -t 750 -i $ICON -u low "Screenshot" "Processing captured image"
+    
+    CURRENT="$(ls /tmp/ | grep 'scrot' | awk -F'.png' '{print $1}')"
+
+    convert /tmp/$CURRENT.png \
+    \( +clone -alpha extract -draw 'fill black polygon 0,0 0,8 8,0 fill white circle 8,8 8,0' \
+    \( +clone -flip \) -compose Multiply -composite \( +clone -flop \) -compose Multiply -composite \) \
+    -alpha off -compose CopyOpacity -composite /tmp/$CURRENT-rounded.png &> /dev/null
+
+    convert /tmp/$CURRENT-rounded.png \( +clone -background black -shadow 25x10+0+5 \) \
+    +swap -background none -layers merge +repage /tmp/$CURRENT-shadow.png &> /dev/null
+
+    convert /tmp/$CURRENT-shadow.png -bordercolor $FRAME_COLOR \
+    -border 5 $SAVE_DIR/$CURRENT.png &> /dev/null
+
+    rm /tmp/*_scrot*.png &> /dev/null
+    [[ -f $SAVE_DIR/$CURRENT.png ]] && \
+    notify-send -i $ICON -u low "Screenshot" "Saved in\n<u>$SAVE_DIR/Screenshots/</u>" && \
+    [[ -x "$(which "viewnior" 2> /dev/null)" ]] && viewnior $SAVE_DIR/$CURRENT.png &> /dev/null
+} &
