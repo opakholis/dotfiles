@@ -1,0 +1,13 @@
+* {
+  accent           : #6272a4;
+  text             : #f8f8f2;
+  background       : #282a36;
+  background-light : #272727;
+  foreground       : #44475a;
+  green            : #50fa7b;
+  red              : #ff5555;
+   
+  alpha            : #00000000;
+	select           : #44475aff;
+}
+
