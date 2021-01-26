@@ -148,6 +148,8 @@ bindsym $super+f fullscreen toggle
 
 ### BORDER & GAPS
 
+#smart_gaps enable
+
 # enable border
 for_window [class="^.*"] border pixel 3
 
@@ -163,8 +165,9 @@ bindsym $super+y border pixel 3
 bindsym $super+u border none
 
 # space gaps
-gaps inner 8
-gaps outer 0
+gaps top   45
+gaps inner 5
+#gaps outer 0
 
 # change gaps
 bindsym $super+plus                gaps inner current plus  5
