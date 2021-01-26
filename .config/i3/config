@@ -31,35 +31,39 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 ### BINDINGS
 
 # core
-bindsym $super+Shift+w	exec --no-startup-id exo-open --launch WebBrowser
-bindsym $super+Shift+e	exec --no-startup-id exo-open --launch FileManager
-bindsym $super+Return	exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym $super+Shift+t 	exec urxvt
+bindsym $super+Shift+w	        exec --no-startup-id exo-open --launch WebBrowser
+bindsym $super+Shift+e	        exec --no-startup-id exo-open --launch FileManager
+bindsym $super+Return	          exec --no-startup-id exo-open --launch TerminalEmulator
+bindsym $super+Shift+t 	        exec urxvt
 
-# launchers
-bindsym $alt+F1 exec --no-startup-id $HOME/.config/polybar/scripts/launcher.sh
+# appmenu
+bindsym $super+R                exec --no-startup-id $HOME/.config/rofi/scripts/launcher.sh
 
-# launcher rofi default
-bindsym $super+F1 exec --no-startup-id rofi_run -r
+# rofi command
+bindsym $super+F1               exec --no-startup-id rofi_run -r
 
 # logout
-bindsym $super+x exec --no-startup-id $HOME/.config/polybar/scripts/powermenu.sh
+bindsym $super+x                exec --no-startup-id $HOME/.config/rofi/scripts/powermenu.sh
 
-# Screenshot
-bindsym $super+Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+# screenshot
+bindsym $super+Print             exec --no-startup-id $HOME/.config/rofi/scripts/screenshot.sh
+bindsym Print                    exec --no-startup-id $HOME/.scripts/shot-now
 
-# audio
-bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext        exec --no-startup-id playerctl next
-bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
-bindsym XF86AudioStop        exec --no-startup-id playerctl stop
-bindsym XF86AudioMute        exec --no-startup-id pamixer -t
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
+# audio control
+bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext           exec --no-startup-id playerctl next
+bindsym XF86AudioPrev           exec --no-startup-id playerctl previous
+bindsym XF86AudioStop           exec --no-startup-id playerctl stop
+bindsym $super+M                exec --no-startup-id $HOME/.config/rofi/scripts/mpd.sh
 
-# backlight
-bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+# volume
+bindsym XF86AudioRaiseVolume    exec --no-startup-id $HOME/.scripts/notify/change-volume up
+bindsym XF86AudioLowerVolume    exec --no-startup-id $HOME/.scripts/notify/change-volume down
+bindsym XF86AudioMute           exec --no-startup-id $HOME/.scripts/notify/change-volume mute
+
+# brightness
+bindsym XF86MonBrightnessUp     exec --no-startup-id $HOME/.scripts/notify/change-brightness up
+bindsym XF86MonBrightnessDown   exec --no-startup-id $HOME/.scripts/notify/change-brightness down
 
 ## WORKSPACE BINDINGS
 
@@ -174,13 +178,13 @@ bindsym $super+Control+Shift+minus gaps outer all     minus 5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-  bindsym Up resize shrink height 10 px or 1 ppt
-  bindsym Down resize grow height 10 px or 1 ppt
-  bindsym Left resize shrink width 10 px or 1 ppt
-  bindsym Right resize grow width 10 px or 1 ppt
+  bindsym Up    resize shrink height 10 px or 1 ppt
+  bindsym Down  resize grow   height 10 px or 1 ppt
+  bindsym Left  resize shrink width  10 px or 1 ppt
+  bindsym Right resize grow   width  10 px or 1 ppt
   bindsym Return mode "default"
 }
-bindsym $super+r mode "resize"
+bindsym $super+Shift+Return mode "resize"
 
 ### COLOR
 
@@ -201,6 +205,14 @@ assign [class="(?i)(?:code)"]    → $ws3
 assign [class="(?i)(?:thunar)"]  → $ws4
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|pinentry|urxvt|nitrogen)"]    floating enable, focus
+for_window [class="(?i)(?:qt5ct|urxvt|nitrogen|viewnior|feh|arandr)"]    floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"]          floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]               floating enable
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="about"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
