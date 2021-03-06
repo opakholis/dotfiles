@@ -39,27 +39,39 @@ setopt INC_APPEND_HISTORY
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-PRIV="sudo"
 
+# fucking cd illusion
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+alias _="sudo"
 alias c="clear"
 alias q="exit"
-alias pacrem="$PRIV pacman -Rcns"
-alias yayus="yay -S"
-alias yayupd="yay -Sy"
-alias yayupg="yay -Syu"
 alias pg="ping 8.8.8.8"
-alias trimall="$PRIV fstrim -va"
-alias nanosu="$PRIV nano"
-alias nvimsu="$PRIV nvim"
-alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
-alias aria="aria2c -s16 -x16"
 alias ls='exa'
+alias pacrem="sudo pacman -Rcns"
+alias trimall="sudo fstrim -va"
+alias nanosu="sudo nano"
+alias nvimsu="sudo nvim"
+alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 alias merge='xrdb merge ~/.Xresources'
+alias rescom='killall picom && picom -b'
 
-# LEMP
-alias runserve="$PRIVE systemctl start nginx mariadb php-fpm"
-alias stopserve="$PRIVE systemctl stop nginx mariadb php-fpm"
-alias reserve="$PRIVE systemctl restart nginx mariadb php-fpm"
+# aria2nc
+alias aria="aria2c -s16 -x16"
+
+# LAMP
+alias runserve="sudo systemctl start httpd mariadb"
+alias stopserve="sudo systemctl stop httpd mariadb"
+alias reserve="sudo systemctl restart httpd mariadb"
+
+# BT
+alias bt="sudo systemctl start bluetooth"
+alias sbt="sudo systemctl stop bluetooth"
+alias rebt="sudo systemctl stop bluetooth"
 
 # Color toys
 alias bloks="~/.color-toys/bloks"
@@ -81,3 +93,9 @@ eval "`fnm env`"
 
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# gpg key
+export GPG_TTY=$(tty)
+
+# android development
+export PATH="$PATH:opt/flutter/bin"
