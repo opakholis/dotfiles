@@ -54,7 +54,7 @@ bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext           exec --no-startup-id playerctl next
 bindsym XF86AudioPrev           exec --no-startup-id playerctl previous
 bindsym XF86AudioStop           exec --no-startup-id playerctl stop
-bindsym $super+M                exec --no-startup-id $HOME/.config/rofi/scripts/mpd.sh
+bindsym $super+M                exec --no-startup-id $HOME/.config/rofi/scripts/$(cat ~/.scripts/music-controller/default).sh
 
 # volume
 bindsym XF86AudioRaiseVolume    exec --no-startup-id $HOME/.scripts/notify/change-volume up
@@ -175,8 +175,8 @@ bindsym $super+y border pixel 3
 bindsym $super+u border none
 
 # space gaps
-gaps top   45
-gaps inner 5
+gaps top   42
+gaps inner 7
 #gaps outer 0
 
 # change gaps
