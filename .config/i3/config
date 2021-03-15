@@ -23,6 +23,7 @@ popup_during_fullscreen smart
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id ~/.feh
 exec --no-startup-id dunst 
 exec --no-startup-id xfce4-power-manager 
 exec --no-startup-id xfsettingsd
