@@ -3,7 +3,7 @@
 !! -----------------------------------------------
 
 ! main
-URxvt.font                       : xft:JetBrainsMono Nerd Font Mono:size=10
+URxvt.font                       : xft:JetBrainsMono Nerd Font Mono:size=9.9
 URxvt.letterSpace                : -1
 URxvt.lineSpace                  : 0
 URxvt.allow_bold                 : true
@@ -17,7 +17,7 @@ URxvt.scrollBar                  : false
 URxvt.scrollBar_floating         : false
 URxvt.scrollBar_right            : false
 URxvt.scrollstyle                : plain
-URxvt.title                      : System Command Promt
+URxvt.title                      : urxvt
 URxvt.iconFile                   : terminal
 URxvt.iso14755                   : false
 URxvt.iso14755_52                : false

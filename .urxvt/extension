@@ -18,11 +18,16 @@ URxvt.keysym.Control-Left        : perl:tabbedex:prev_tab
 URxvt.keysym.Control-Shift-Right : perl:tabbedex:move_tab_right
 URxvt.keysym.Control-Shift-Left  : perl:tabbedex:move_tab_left
 
+URxvt.tabbedex.tabbar-fg           : 0
+URxvt.tabbedex.tabbar-bg           : 4
+URxvt.tabbedex.tab-fg              : 0
+URxvt.tabbedex.tab-bg              : 4
+
 ! clipboard
 URxvt.clipboard.copycmd          : xclip -i -selection clipboard
 URxvt.clipboard.pastecmd         : xclip -o -selection clipboard
-URxvt.keysym.Shift-Control-C     : perl:clipboard:copy
-URxvt.keysym.Shift-Control-V     : perl:clipboard:paste
+URxvt.keysym.Control-Shift-C     : perl:clipboard:copy
+URxvt.keysym.Control-Shift-V     : perl:clipboard:paste
 
 ! url
 URxvt.matcher.button             : 1

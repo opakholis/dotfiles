@@ -4,7 +4,7 @@
 
 ! fonts
 
-Xft.dpi: 86
+Xft.dpi: 89
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
