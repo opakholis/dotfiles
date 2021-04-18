@@ -8,37 +8,29 @@ notify() {
     
     if [ "$brightness" = "0" ]; then
         icon_name="notification-display-brightness-off"
-    else    
-        if [  "$brightness" -lt "10" ]; then
-            icon_name="notification-display-brightness-low"
-        else
-            if [ "$brightness" -lt "30" ]; then
-                icon_name="notification-display-brightness-medium"
-            else
-                if [ "$brightness" -lt "70" ]; then
-                    icon_name="notification-display-brightness-medium"
-                else
-                    if [ "$brightness" -lt "100" ]; then
-                        icon_name="notification-display-brightness-high"
-                    else
-                        icon_name="notification-display-brightness-full"
-                    fi
-                fi
-            fi
-        fi
+    elif [ "$brightness" -lt "10" ]; then
+        icon_name="notification-display-brightness-low"
+    elif [ "$brightness" -lt "30" ]; then
+        icon_name="notification-display-brightness-medium"
+    elif [ "$brightness" -lt "70" ]; then
+        icon_name="notification-display-brightness-medium"
+    elif [ "$brightness" -lt "100" ]; then
+        icon_name="notification-display-brightness-high"
+    else
+        icon_name="notification-display-brightness-full"
     fi
-    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 2000 -r 1234 "$brightness "
+    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 1500 -r 1234 "$brightness "
 }
 
 case $1 in
     up)
         # +5%
-        brightnessctl set 5%+ -q
+        brightnessctl set 2%+ -q
         notify
 	;;
     down)
         # -5%
-        brightnessctl set 5%- -q
+        brightnessctl set 2%- -q
         notify
 	;;
     optimal)
