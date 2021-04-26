@@ -92,9 +92,6 @@ alias pipes2-slim="~/.color-toys/pipes2-slim"
 export PATH=/home/opxop/.fnm:$PATH
 eval "`fnm env`"
 
-# yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # gpg key
 export GPG_TTY=$(tty)
 
