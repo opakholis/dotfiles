@@ -71,7 +71,7 @@ alias reserve="sudo systemctl restart httpd mariadb"
 # BT
 alias bt="sudo systemctl start bluetooth"
 alias sbt="sudo systemctl stop bluetooth"
-alias rebt="sudo systemctl stop bluetooth"
+alias rebt="sudo systemctl restart bluetooth"
 
 # Color toys
 alias bloks="~/.color-toys/bloks"
