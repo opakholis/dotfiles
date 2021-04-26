@@ -52,6 +52,7 @@ alias c="clear"
 alias q="exit"
 alias pg="ping 8.8.8.8"
 alias ls='exa'
+alias cat='bat'
 alias pacrem="sudo pacman -Rcns"
 alias trimall="sudo fstrim -va"
 alias nanosu="sudo nano"
