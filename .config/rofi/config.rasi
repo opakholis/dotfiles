@@ -3,4 +3,9 @@
 configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
+  cycle:                true;
+  hide-scrollbar:       true;
+  disable-history:      true;
+  sidebar-mode:         false;
+  modi:                 "drun,window,file-browser";
 }
