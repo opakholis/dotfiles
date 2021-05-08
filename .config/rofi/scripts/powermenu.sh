@@ -57,10 +57,10 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock-fancy ]]; then
+		if [[ -f /usr/bin/betterlockscreen ]]; then
+			betterlockscreen -l blur
+		elif [[ -f /usr/bin/i3lock-fancy ]]; then
 			i3lock-fancy
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
 		fi
         ;;
     $suspend)
