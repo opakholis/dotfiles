@@ -20,7 +20,7 @@ In every file there is its path.
           wm ~ i3-gaps
           dm ~ lightdm
           fm ~ thunar
-        term ~ termite/URxvt
+        term ~ kitty
       editor ~ code/nvim
      browser ~ firefox
     launcher ~ rofi
@@ -35,11 +35,8 @@ notification ~ dunst
   </tr>
 </table>
 
-## Credits / Thanks
+### Shoortzz
 
 - [owl4ce](https://github.com/owl4ce)
 - [bandithijo](https://github.com/bandithijo)
 - [adi1090x](https://github.com/adi1090x)
-- Local community
-  - [@dotfiles_id](https://t.me/dotfiles_id)
-  - [r/unixporn](https://www.reddit.com/r/unixporn/)
