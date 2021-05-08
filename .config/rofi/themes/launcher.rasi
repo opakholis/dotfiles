@@ -63,7 +63,7 @@ entry {
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
+	children: 						[ prompt, textbox-prompt-colon, entry ];
     background-color:               @select;
     text-color:                     @text;
     expand:                         false;
