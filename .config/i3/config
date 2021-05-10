@@ -66,6 +66,9 @@ bindsym XF86AudioMute           exec --no-startup-id $HOME/.scripts/notify/chang
 bindsym XF86MonBrightnessUp     exec --no-startup-id $HOME/.scripts/notify/change-brightness up
 bindsym XF86MonBrightnessDown   exec --no-startup-id $HOME/.scripts/notify/change-brightness down
 
+# Touchpad
+bindsym XF86TouchpadToggle      exec --no-startup-id $HOME/.scripts/notify/toggle-touchpad
+
 ## WORKSPACE BINDINGS
 
 # assign workspaces to screens
@@ -202,13 +205,13 @@ bindsym $super+Shift+Return mode "resize"
 
 ### COLOR
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #6272a4 #6272a4 #f8f8f2 #6272a4   #6272a4
-client.focused_inactive #44475a #5f676a #f8f8f2 #484e50   #5f676a
-client.unfocused        #44475a #222222 #f8f8f2 #292d2e   #222222
-client.urgent           #2f343a #50fa7b #f8f8f2 #50fa7b   #50fa7b
-client.placeholder      #44475a #44475a #f8f8f2 #44475a   #44475a
-client.background       #f8f8f2
+# class                 border    backgr    text      indicator  child_border
+client.focused          #6272a4   #6272a4   #f8f8f2   #6272a4    #6272a4
+client.focused_inactive #44475a   #5f676a   #f8f8f2   #484e50    #5f676a
+client.unfocused        #44475a   #222222   #f8f8f2   #292d2e    #222222
+client.urgent           #2f343a   #50fa7b   #f8f8f2   #50fa7b    #50fa7b
+client.placeholder      #44475a   #44475a   #f8f8f2   #44475a    #44475a
+client.background       #f8f8f2 
 
 ### APPLICATION SETTINGS
 
@@ -219,7 +222,9 @@ assign [class="(?i)(?:code)"]    → workspace 3
 assign [class="(?i)(?:thunar)"]  → workspace 4
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|urxvt|nitrogen|viewnior|feh|arandr)"]    floating enable, focus
+for_window [class="(?i)(?:qt5ct|urxvt|nitrogen|viewnior|feh|arandr|thunar)"]    floating enable, focus
+for_window [class="jetbrains-studio" title="Welcome to Android Studio"]  floating disable
+for_window [class="jetbrains-studio"]                         floating enable
 for_window [title="(?i)(?:copying|deleting|moving)"]          floating enable
 for_window [title=".*Emulator.*"]                             floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]               floating enable
