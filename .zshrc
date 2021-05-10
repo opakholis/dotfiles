@@ -19,17 +19,22 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions bgnotify)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions bgnotify zsh-peco-history z)
 
 # for change color of zsh-autosuggestion
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # To read the history file everytime history is called upon as well
 # as the functionality from inc_append_history:
-setopt INC_APPEND_HISTORY
+# setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -39,13 +44,6 @@ setopt INC_APPEND_HISTORY
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# fucking cd illusion
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 
 alias _="sudo"
 alias c="clear"
@@ -59,7 +57,7 @@ alias nanosu="sudo nano"
 alias nvimsu="sudo nvim"
 alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 alias merge='xrdb merge ~/.Xresources'
-alias rescom='killall picom && picom -b'
+alias repic='killall picom && picom -b'
 
 # aria2nc
 alias aria="aria2c -s16 -x16"
@@ -85,9 +83,6 @@ alias pipes1="~/.color-toys/pipes1"
 alias pipes2="~/.color-toys/pipes2"
 alias pipes2-slim="~/.color-toys/pipes2-slim"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # fnm
 export PATH=/home/opxop/.fnm:$PATH
 eval "`fnm env`"
@@ -97,3 +92,6 @@ export GPG_TTY=$(tty)
 
 # android development
 export PATH="$PATH:opt/flutter/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
