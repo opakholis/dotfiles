@@ -2,12 +2,12 @@
   ### Display
   monitor = 0
   follow = mouse
-  geometry = "0x0-25-25"
+  geometry = "420x5-12+56"
   indicate_hidden = yes
-  shrink = yes
+  shrink = no
   transparency = 0
 
-  separator_height = 3
+  separator_height = 4
   padding = 8
   horizontal_padding = 11
 
@@ -16,12 +16,12 @@
   separator_color = frame
 
   # Sort messages by urgency.
-  sort = no
+  sort = yes
   idle_threshold = 120
 
   ### Text
-  font = JetBrainsMono Nerd Font 9
-  line_height = 0
+  font = Roboto 9
+  line_height = 2
   markup = full
   format = "<span size='x-large' font_desc='JetBrainsMono Nerd Font 8' weight='bold' foreground='#f8f8f2'>%s</span>\n%b"
   alignment = left
