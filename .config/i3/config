@@ -23,7 +23,7 @@ popup_during_fullscreen smart
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id ~/.feh
+exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst 
 exec --no-startup-id xfce4-power-manager 
 exec --no-startup-id xfsettingsd
@@ -217,10 +217,10 @@ client.background       #f8f8f2
 ### APPLICATION SETTINGS
 
 # assign applications to specific workspace
-assign [class="(?i)(?:termite)"] → workspace 1
-assign [class="(?i)(?:firefox)"] → workspace 2
-assign [class="(?i)(?:code)"]    → workspace 3
-assign [class="(?i)(?:thunar)"]  → workspace 4
+assign [class="(?i)(?:kitty)"]      → workspace 1
+assign [class="(?i)(?:code)"]       → workspace 2
+assign [class="(?i)(?:librewolf)"]  → workspace 3
+assign [class="(?i)(?:thunar)"]     → workspace 4
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|urxvt|nitrogen|viewnior|feh|arandr|thunar)"]    floating enable, focus
