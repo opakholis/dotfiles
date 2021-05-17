@@ -23,6 +23,7 @@ popup_during_fullscreen smart
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
+# exec --no-startup-id betterlockscreen -w blur
 exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst 
 exec --no-startup-id xfce4-power-manager 
@@ -196,10 +197,10 @@ bindsym $super+Control+Shift+minus gaps outer all     minus 5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-  bindsym Up    resize shrink height 10 px or 1 ppt
-  bindsym Down  resize grow   height 10 px or 1 ppt
-  bindsym Left  resize shrink width  10 px or 1 ppt
-  bindsym Right resize grow   width  10 px or 1 ppt
+  bindsym Up    resize shrink height 5 px or 1 ppt
+  bindsym Down  resize grow   height 5 px or 1 ppt
+  bindsym Left  resize shrink width  5 px or 1 ppt
+  bindsym Right resize grow   width  5 px or 1 ppt
   bindsym Return mode "default"
 }
 bindsym $super+Shift+Return mode "resize"
@@ -208,10 +209,10 @@ bindsym $super+Shift+Return mode "resize"
 
 # class                 border    backgr    text      indicator  child_border
 client.focused          #6272a4   #6272a4   #f8f8f2   #6272a4    #6272a4
-client.focused_inactive #44475a   #5f676a   #f8f8f2   #484e50    #5f676a
-client.unfocused        #44475a   #222222   #f8f8f2   #292d2e    #222222
-client.urgent           #2f343a   #50fa7b   #f8f8f2   #50fa7b    #50fa7b
-client.placeholder      #44475a   #44475a   #f8f8f2   #44475a    #44475a
+client.focused_inactive #1e222a   #1e222a   #f8f8f2   #1e222a    #1e222a
+client.unfocused        #44475a   #222222   #f8f8f2   #292d2e    #1e222a
+client.urgent           #bd93f9   #bd93f9   #f8f8f2   #bd93f9    #bd93f9
+client.placeholder      #ffb86c   #ffb86c   #f8f8f2   #ffb86c    #ffb86c
 client.background       #f8f8f2 
 
 ### APPLICATION SETTINGS
@@ -223,12 +224,14 @@ assign [class="(?i)(?:librewolf)"]  → workspace 3
 assign [class="(?i)(?:thunar)"]     → workspace 4
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|urxvt|nitrogen|viewnior|feh|arandr|thunar)"]    floating enable, focus
+for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|jetbrains-studio|pavucontro)"]    floating enable, focus, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]  floating disable
-for_window [class="jetbrains-studio"]                         floating enable
-for_window [title="(?i)(?:copying|deleting|moving)"]          floating enable
-for_window [title=".*Emulator.*"]                             floating enable
-for_window [window_role="(?i)(?:pop-up|setup)"]               floating enable
+for_window [class="LibreWolf" title="About LibreWolf"]           floating enable
+
+for_window [title="(?i)(?:copying|deleting|moving)"]             floating enable
+for_window [title=".*Emulator.*"]                                floating enable
+
+for_window [window_role="(?i)(?:pop-up|setup)"]                  floating enable
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
