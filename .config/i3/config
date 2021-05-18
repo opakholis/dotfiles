@@ -36,7 +36,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 bindsym $super+Shift+w	        exec --no-startup-id exo-open --launch WebBrowser
 bindsym $super+Shift+e	        exec --no-startup-id exo-open --launch FileManager
 bindsym $super+Return	          exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym $super+Shift+t 	        exec urxvt
+bindsym $super+Shift+t 	        exec --no-startup-id st
 
 # appmenu
 bindsym $super+R                exec --no-startup-id $HOME/.config/rofi/scripts/launcher.sh
