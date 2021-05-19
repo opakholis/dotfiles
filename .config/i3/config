@@ -21,7 +21,7 @@ popup_during_fullscreen smart
 ### AUTOSTART
 
 exec_always --no-startup-id picom -b
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
 # exec --no-startup-id betterlockscreen -w blur
 exec --no-startup-id source ~/.fehbg
@@ -181,7 +181,8 @@ bindsym $super+y border pixel 3
 bindsym $super+u border none
 
 # space gaps
-gaps top   42
+# gaps top 42
+gaps top 30
 gaps inner 7
 #gaps outer 0
 
