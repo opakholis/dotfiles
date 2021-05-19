@@ -11,7 +11,7 @@ configuration {
 	font:							"JetBrainsMono Nerd Font Mono 9";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
-    display-drun: 					"Applications";
+    display-drun: 					"APP";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
@@ -25,14 +25,14 @@ window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-	border:							3px;
-	border-color:					@accent;
+	border:							2px;
+	border-color:					@foreground;
     border-radius:                  2px;
 	width:							45%;
     height:                         26%;
     location:                       Northwest;
-    x-offset:                       10px;
-    y-offset:                       55px;
+    x-offset:                       17px;
+    y-offset:                       45px;
 }
 
 prompt {
@@ -54,7 +54,7 @@ textbox-prompt-colon {
 entry {
     background-color:               @alpha;
     text-color:                     @text;
-    placeholder-color:              @background;
+    placeholder-color:              @44475a;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";

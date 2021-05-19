@@ -25,14 +25,14 @@ window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @text;
-	border:							3px;
-	border-color:					@accent;
+	border:							2px;
+	border-color:					@foreground;
     border-radius:                  0px;
 	width:							400px;
     height:                         200px;
     location:                       Northeast;
-    x-offset:                       -10px;
-    y-offset:                       55px;
+    x-offset:                       -17px;
+    y-offset:                       45px;
 }
 
 prompt {
