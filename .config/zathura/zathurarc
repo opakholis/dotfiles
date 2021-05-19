@@ -35,3 +35,7 @@ set recolor                     "true"
 # setting recolor-keep true will keep any color your pdf has.
 # if it is false, it'll just be black and white
 set recolor-keephue             "true"
+
+# custom key bindings
+map l navigate next
+map h navigate previous
