@@ -167,15 +167,15 @@ bindsym $super+f fullscreen toggle
 #smart_gaps enable
 
 # enable border
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 ## border style
 
 # use window title, but no border
-bindsym $super+t border normal 3
+bindsym $super+t border normal 2
 
 # use no window title and a thick border
-bindsym $super+y border pixel 3
+bindsym $super+y border pixel 2
 
 # use neither window title nor border
 bindsym $super+u border none
