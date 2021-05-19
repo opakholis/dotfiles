@@ -210,8 +210,8 @@ bindsym $super+Shift+Return mode "resize"
 
 # class                 border    backgr    text      indicator  child_border
 client.focused          #6272a4   #6272a4   #f8f8f2   #6272a4    #6272a4
-client.focused_inactive #1e222a   #1e222a   #f8f8f2   #1e222a    #1e222a
-client.unfocused        #44475a   #222222   #f8f8f2   #292d2e    #1e222a
+client.focused_inactive #2D2F3C   #2D2F3C   #f8f8f2   #2D2F3C    #2D2F3C
+client.unfocused        #44475a   #44475a   #f8f8f2   #44475a    #44475a
 client.urgent           #bd93f9   #bd93f9   #f8f8f2   #bd93f9    #bd93f9
 client.placeholder      #ffb86c   #ffb86c   #f8f8f2   #ffb86c    #ffb86c
 client.background       #f8f8f2 
