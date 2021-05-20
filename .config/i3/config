@@ -225,7 +225,7 @@ assign [class="(?i)(?:librewolf)"]  → workspace 3
 assign [class="(?i)(?:thunar)"]     → workspace 4
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|jetbrains-studio|pavucontro)"]    floating enable, focus, center
+for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|jetbrains-studio|pavucontro|zoom)"]    floating enable, focus, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]  floating disable
 for_window [class="LibreWolf" title="About LibreWolf"]           floating enable
 
