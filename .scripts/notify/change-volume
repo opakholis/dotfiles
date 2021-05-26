@@ -18,7 +18,7 @@ notify() {
     else
         icon_name="notification-audio-volume-high"
     fi
-    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 1500 -r 123 "$volume "
+    notify-send.sh -i "$icon_name" -t 1500 -r 123 "Volume: $volume"
 }
 
 case $1 in
