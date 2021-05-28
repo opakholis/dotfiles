@@ -50,8 +50,8 @@ bindsym $super+x                exec --no-startup-id $HOME/.config/rofi/scripts/
 
 # screenshot
 bindsym $super+Print             exec --no-startup-id $HOME/.config/rofi/scripts/screenshot.sh
-bindsym $super+Shift+Print       exec --no-startup-id $HOME/.scripts/shot-window
-bindsym Print                    exec --no-startup-id $HOME/.scripts/shot-now
+bindsym Shift+Print              exec --no-startup-id $HOME/.scripts/screenshot/shot-window
+bindsym Print                    exec --no-startup-id $HOME/.scripts/screenshot/shot-now
 
 # audio control
 bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
