@@ -97,8 +97,8 @@ bindsym $super+8 workspace 8
 bindsym $super+9 workspace 9
 
 # switch to output
-bindsym $super+shift+k focus output eDP1
-bindsym $super+shift+l focus output HDMI1
+#bindsym $super+shift+k focus output eDP1
+#bindsym $super+shift+l focus output HDMI1
 
 # switch to next or previous workspace
 bindsym $super+$alt+Left workspace prev
@@ -133,17 +133,29 @@ bindsym $super+Shift+z move scratchpad
 bindsym $super+z scratchpad show
 
 # change focus
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+bindsym $super+p focus parent
+bindsym $super+o focus child
+
+# alternatively, you can use the cursor keys:
 bindsym $super+Left  focus left
 bindsym $super+Down  focus down
 bindsym $super+Up    focus up
 bindsym $super+Right focus right
-bindsym $super+p     focus parent
-bindsym $super+o     focus child
 
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
-# move focus window
+# move focused window
+bindsym $super+Shift+h move left 1px
+bindsym $super+Shift+j move down 1px
+bindsym $super+Shift+k move up 1px
+bindsym $super+Shift+l move right 1px
+
+# alternatively, you can use the cursor keys:semicolon
 bindsym $super+Shift+Up    move up  
 bindsym $super+Shift+Down  move down 
 bindsym $super+Shift+Left  move left 
@@ -153,11 +165,13 @@ bindsym $super+Shift+Right move right
 bindsym $super+c kill
 bindsym $alt+F4 kill
 
-# change container layout split
-bindsym $super+s layout toggle split
+# change container layout (stacked, tabbed, toggle split)
+bindsym $super+s layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+e layout toggle split
 
 # container layout
-bindsym $super+h split h
+bindsym $super+b split h
 bindsym $super+v split v
 
 # enter fullscreen mode for the focused container
