@@ -242,7 +242,7 @@ assign [class="(?i)(?:Xreader)"]    → workspace 5
 assign [class="(?i)(?:Telegram)"]   → workspace 6
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar)"]             floating enable, center
+for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|nm-connection-editor)"] floating enable, center
 for_window [class="(?i)(?:pavucontrol|blueman-manager|Woeusbgui)"]        floating enable, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
 for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
