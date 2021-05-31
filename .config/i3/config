@@ -243,7 +243,8 @@ assign [class="(?i)(?:Telegram)"]   → workspace 6
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|nm-connection-editor)"] floating enable, center
-for_window [class="(?i)(?:pavucontrol|blueman-manager|Woeusbgui)"]        floating enable, center
+for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance)"]     floating enable, center
+for_window [class="(?i)(?:gpick|xfce4-appearance-settings)"]        floating enable, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
 for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
 for_window [class="firefox*" title="About Firefox*"]      floating enable
