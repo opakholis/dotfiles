@@ -14,7 +14,7 @@ alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 alias merge='xrdb merge'
 alias load="kill -USR0 $(pidof st)"
 alias picom='killall picom && picom -b'
-alias aria='aria2c -s16 -x16'
+alias aria='aria2c -s16 -x16 --dir=/mnt/Mark-I/Atomic'
 
 # exa
 # details information about shortcut https://the.exa.website/docs/command-line-options
