@@ -19,7 +19,7 @@ notify() {
     else
         icon_name="notification-display-brightness-full"
     fi
-    notify-send.sh -i "$icon_name" -t 1500 -r 1234 "Brightness: $brightness "
+    notify-send.sh -i "$icon_name" -t 1500 -r 1234 "$brightness"
 }
 
 case $1 in
