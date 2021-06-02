@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#             
+
+user_pref() {
+SAVE_DIR="$HOME/Pictures"
+ICON="~/.icons/linebit/screenshot.png"
+
+SAVE_SS="yes"
+COPY2CLIP="yes"
+
+ENABLE_FRAME="yes"
+FRAME_COLOR="#ffffff"
+OPEN_FRAMED="yes"
+FRAMED_SHADOW_OPACITY="25"
+TIMER_SEC="5"
+QUALITY="89"
+}
+
+# Call User Preferences
+user_pref
