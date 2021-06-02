@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Take screenshot after ..s
+LC_ALL=C LANG=C; source $HOME/.scripts/screenshot/env
+
+{
+    read -rt ".5" <> <(:) || :
+    
+    while true; do
+        if [[ "$COPY2CLIP" = "yes" ]] && [[ -n "$(command -v "xclip")" ]]; then
+            CLIP="xclip -selection clipboard -target image/png -i '\$f' ; "
+            STAT="\n(+CLIPBOARD)" && break
+        elif [[ "$SAVE_SS" != "yes" ]]; then
+            COPY2CLIP="yes"
+        else break;
+        fi
+    done
+
+    if [[ "$SAVE_SS" = "yes" ]]; then
+        [[ ! -d "$SAVE_DIR/scrot" ]] && mkdir -p "$SAVE_DIR/scrot" || :
+        EXEC="${CLIP:-}mv '\$f' \"$SAVE_DIR/scrot\""
+        SV_LOC="$(echo $SAVE_DIR | grep -oE '[^/]+$')/scrot${STAT:-}"
+    else
+        EXEC="${CLIP:-}rm -f '\$f'"
+        SV_LOC="CLIPBOARD"
+    fi
+
+    notify-send.sh -t 1000 -i $ICON -u low " scrot" "Taken in $(echo ${TIMER_SEC:-5})s .."
+    scrot -q "${QUALITY:-75}" -d "${TIMER_SEC:-5}" -e "$EXEC"
+    notify-send.sh -i $ICON -u low "scrot" "Screen has been captured!"
+} & /dev/null &
