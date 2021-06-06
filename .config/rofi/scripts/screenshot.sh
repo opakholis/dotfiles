@@ -19,13 +19,13 @@ options="$screen\n$area\n$window"
 chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 1)"
 case $chosen in
     $screen)
-		$HOME/.scripts/shot-now 
+		$HOME/.scripts/screenshot/shot-timer 
     ;;
     $area)
-		$HOME/.scripts/shot-seldraw
+		$HOME/.scripts/screenshot/shot-seldraw
     ;;
     $window)
-		$HOME/.scripts/shot-window
-	;;
+		$HOME/.scripts/screenshot/shot-window
+    ;;
 esac
 
