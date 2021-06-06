@@ -23,10 +23,10 @@ configuration {
 
 window {
     transparency:                   "real";
-    border:                         3px;
+    border:                         2px;
     border-radius:                  0;
-    border-color:                   @accent;
-    width:                          355px;
+    border-color:                   @foreground;
+    width:                          358px;
     location:                       South;
     x-offset:                       0px;
     y-offset:                       -15px;
@@ -54,11 +54,11 @@ element {
 }
 
 element-text {
-	font:							"feather 15";
+	font:							"feather 12";
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         20px 18px 20px 0px;
+    margin:                         20px 20px 20px 0px;
 }
 
 element normal.urgent,
