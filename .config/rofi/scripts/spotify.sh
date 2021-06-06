@@ -40,12 +40,12 @@ case $chosen in
         playerctl -p spotify play-pause
         ;;
     $stop)
-        playerctl -p spotify stop && ~/.scripts/notify/notify-send.sh -u low -i "~/.icons/custom/linebit/music.png" -r 8888 "Music Player" "Stopped"
+        playerctl -p spotify stop && notify-send.sh -u low -i "~/.icons/linebit/poweroff.png" -r 8888 "Music Player" "Stopped"
         ;;
     $next)
         playerctl -p spotify next
         ;;
     $tog_stream)
-        echo "mpd" > ~/.scripts/music-controller/default && ~/.scripts/notify/notify-send.sh -u low -i "~/.icons/custom/linebit/music.png" -r 8888 "Music Player" "Set <u>`cat ~/.scripts/music-controller/default`</u> as default"
+        echo "mpd" > ~/.scripts/music-controller/default && notify-send.sh -u low -i "~/.icons/linebit/poweroff.png" -r 8888 "Music Player" "Set <b>`cat ~/.scripts/music-controller/default`</b> as default"
         ;;
 esac
