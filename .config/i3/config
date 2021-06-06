@@ -21,26 +21,27 @@ popup_during_fullscreen smart
 ### AUTOSTART
 
 exec_always --no-startup-id picom -b
-exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
-# exec --no-startup-id betterlockscreen -w blur
+exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
+exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 180 "betterlockscreen -l dim" "" --timer 3600 "systemctl suspend" "" &
 exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst 
-exec --no-startup-id xfce4-power-manager 
+#exec --no-startup-id xfce4-power-manager 
 exec --no-startup-id xfsettingsd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 
 ### BINDINGS
 
 # core
-bindsym $super+Shift+w	        exec --no-startup-id exo-open --launch WebBrowser
-bindsym $super+Shift+e	        exec --no-startup-id exo-open --launch FileManager
-bindsym $super+Return	          exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym $super+Shift+t 	        exec --no-startup-id st
+bindsym $super+Return	          exec --no-startup-id kitty
+bindsym $super+Shift+e	        exec --no-startup-id thunar
+bindsym $super+Shift+t 	        exec --no-startup-id st -g 68x12 
 bindsym $super+Shift+p 	        exec --no-startup-id pavucontrol
+bindsym $super+Shift+w	        exec --no-startup-id exo-open --launch WebBrowser
 
 # appmenu
-bindsym $super+R                exec --no-startup-id $HOME/.config/rofi/scripts/launcher.sh
+bindsym $super+r                exec --no-startup-id $HOME/.config/rofi/scripts/launcher.sh
+bindsym $super+n                exec --no-startup-id $HOME/.config/rofi/scripts/modi.sh
 
 # rofi command
 bindsym $super+F1               exec --no-startup-id rofi_run -r
@@ -243,8 +244,8 @@ assign [class="(?i)(?:Telegram)"]   → workspace 6
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|nm-connection-editor)"] floating enable, center
-for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance)"]     floating enable, center
-for_window [class="(?i)(?:gpick|xfce4-appearance-settings)"]        floating enable, center
+for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance|xarchiver|st)"]     floating enable, center
+for_window [class="(?i)(?:gpick|xfce4-appearance-settings|system-config-printer)"] floating enable, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
 for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
 for_window [class="firefox*" title="About Firefox*"]      floating enable
