@@ -8,10 +8,10 @@
  */
 
 configuration {
-	font:							"JetBrainsMono Nerd Font Mono 9";
+	font:							"JetBrainsMono Nerd Font 9";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"APP";
+	icon-theme: 					"Fluent dark";
+    display-drun: 					"APPS";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
@@ -40,7 +40,7 @@ prompt {
 	padding: 						1% 0.75% 1% 0.75%;
 	background-color: 				@accent;
 	text-color: 					@text;
-	font:							"JetBrainsMono Nerd Font Mono 10";
+    font:							"Iosevka Nerd Font 10";
 }
 
 textbox-prompt-colon {
