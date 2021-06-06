@@ -54,7 +54,7 @@ case $chosen in
         mpc -q toggle
         ;;
     $stop)
-        mpc -q stop && ~/.scripts/notify/notify-send.sh -u low -i "~/.icons/custom/linebit/music.png" -r 8888 "Music Player" "Stopped"
+        mpc -q stop && notify-send.sh -u low -i "~/.icons/linebit/poweroff.png" -r 8888 "Music Player" "Stopped"
         ;;
     $next)
         mpc -q next
@@ -63,6 +63,6 @@ case $chosen in
         mpc -q single
         ;;
     $tog_stream)
-        echo "spotify" > ~/.scripts/music-controller/default && ~/.scripts/notify/notify-send.sh -u low -i "~/.icons/custom/linebit/music.png" -r 8888 "Music Player" "Set <u>`cat ~/.scripts/music-controller/default`</u> as default"
+        echo "spotify" > ~/.scripts/music-controller/default && notify-send.sh -u low -i "~/.icons/linebit/music.png" -r 8888 "Music Player" "Set <b>`cat ~/.scripts/music-controller/default`</b> as default"
         ;;
 esac
