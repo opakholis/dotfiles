@@ -1,11 +1,12 @@
 /** Basic config file **/
 
 configuration {
-  show-icons:         true;
-  icon-theme:         "Papirus";
+  show-icons:           true;
+  icon-theme:           "Fluent dark";
   cycle:                true;
   hide-scrollbar:       true;
   disable-history:      true;
   sidebar-mode:         false;
-  modi:                 "drun,window,file-browser";
+  modi:                 "drun,window,file-browser,calc,emoji,combi";
 }
+

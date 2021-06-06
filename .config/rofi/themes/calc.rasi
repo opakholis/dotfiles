@@ -1,0 +1,60 @@
+/* Confirm Dialog */
+
+@import "colors.rasi"
+
+* {
+    background-color:               @background;
+    text-color:                     @text;
+	font:				 	        "JetBrainsMono Nerd Font 9";
+    margin:                         0 0 2px 0;
+}
+
+window {
+    width:      			        520px;
+    height:                         200px;
+    padding:    			        25px;
+    border:					        2px;
+    border-radius:                  0;
+    border-color:                   @foreground;
+    location:                       Center;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 						1% 0.75% 1% 0.75%;
+	background-color: 				@accent;
+	text-color: 					@text;
+	font:							"Iosevka Nerd Font 11";
+}
+
+textbox-prompt-colon {
+	padding: 						1% 0% 1% 0%;
+	background-color: 				@select;
+	text-color: 					@text;
+	expand:                         false;
+	str:                            " :: ";
+}
+
+entry {
+    background-color:               @alpha;
+    text-color:                     @text;
+    placeholder-color:              @44475a;
+    expand:                         true;
+    horizontal-align:               0;
+	padding: 						1.15% 0.5% 1% 0.5%;
+    blink:                          true;
+}
+
+inputbar {
+	children: 						[ prompt, textbox-prompt-colon, entry ];
+    background-color:               @select;
+    text-color:                     @text;
+    expand:                         false;
+	border-color:					@accent;
+    margin:                         10px 0;
+}
+
+element selected {
+    text-color:                     @green;
+    border-radius:                  0px;
+}
