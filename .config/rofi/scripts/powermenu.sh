@@ -58,7 +58,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l blur
+			betterlockscreen -l dim
 		elif [[ -f /usr/bin/i3lock-fancy ]]; then
 			i3lock-fancy
 		fi
