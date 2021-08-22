@@ -3,18 +3,22 @@
 # contains aliases and variables which are environment-indipendent
 #
 
-alias _="sudo"
+alias sudo="sudo "
 alias c="clear"
 alias q="exit"
 alias g="git"
+alias ga="git add"
+alias gst="git status"
+alias gcmsg="git commit -m"
 alias pg="ping 8.8.8.8"
 alias pacrem="sudo pacman -Rcns"
 alias trimall="sudo fstrim -va"
 alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
 alias merge='xrdb merge'
-alias load="kill -USR0 $(pidof st)"
+alias load="kill -USR1 $(pidof st)"
 alias picom='killall picom && picom -b'
 alias aria='aria2c -s16 -x16 --dir=/mnt/Mark-I/Atomic'
+alias tuxii="tuxi -l LANG_id_ID"
 
 # exa
 # details information about shortcut https://the.exa.website/docs/command-line-options
@@ -55,6 +59,7 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:opt/flutter/bin"
 
 # Less Colors for Man Pages
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
 export LESS_TERMCAP_me=$'\e[0m'           # end mode
