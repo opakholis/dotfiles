@@ -20,10 +20,11 @@ popup_during_fullscreen smart
 
 ### AUTOSTART
 
+exec_always --no-startup-id parcellite &
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
-exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 180 "betterlockscreen -l dim" "" --timer 3600 "systemctl suspend" "" &
+exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 "betterlockscreen -l dim" "" --timer 3600 "systemctl suspend" "" &
 exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst 
 #exec --no-startup-id xfce4-power-manager 
@@ -243,9 +244,9 @@ assign [class="(?i)(?:Xreader)"]    → workspace 5
 assign [class="(?i)(?:Telegram)"]   → workspace 6
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|viewnior|feh|arandr|thunar|nm-connection-editor)"] floating enable, center
+for_window [class="(?i)(?:qt5ct|feh|arandr|thunar|nm-connection-editor|SimpleScreenRecorder)"] floating enable, center
 for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance|xarchiver|st)"]     floating enable, center
-for_window [class="(?i)(?:gpick|xfce4-appearance-settings|system-config-printer)"] floating enable, center
+for_window [class="(?i)(?:gpick|xfce4-appearance-settings|system-config-printer|viewnior)"] floating enable, center
 for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
 for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
 for_window [class="firefox*" title="About Firefox*"]      floating enable
@@ -253,6 +254,7 @@ for_window [class="firefox*" title="Library"]             floating enable
 
 for_window [class="scrcpy"] floating enable move right 460px,move down 0px
 for_window [class="zoom" title="Zoom - Free Account"] floating enable move right 470px,move down 0px
+for_window [class="zoom" title="Chat"] floating enable move right 470px,move down 0px
 for_window [class="zoom" title="Settings"] floating enable
 
 for_window [title=".*Emulator.*"]                                  floating enable
