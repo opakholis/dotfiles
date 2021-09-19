@@ -6,11 +6,7 @@
 alias sudo="sudo "
 alias c="clear"
 alias q="exit"
-alias g="git"
-alias ga="git add"
-alias gst="git status"
-alias gcmsg="git commit -m"
-alias pg="ping 8.8.8.8"
+alias pg="ping 1.1.1.1"
 alias pacrem="sudo pacman -Rcns"
 alias trimall="sudo fstrim -va"
 alias fetch="info='n os wm kern pkgs sh mem term col n' fet.sh"
@@ -26,10 +22,17 @@ alias ls="exa"
 alias lsa="exa -alh"
 alias lst="exa -lhTL=2 --icons"
 
-# nvim
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
+# git
+alias g="git"
+alias ga="git add"
+alias gc="git clone"
+alias gst="git status"
+alias gcmsg="git commit -m"
+
+# lvim
+alias vim="lvim"
+alias vi="lvim"
+alias v="lvim"
 
 # LAMP
 alias runserve="sudo systemctl start httpd mariadb"
