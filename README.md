@@ -15,13 +15,13 @@ In every file there is its path.
 ### Now i use:
 
 ```sh
-          os ~ archlabs
+          os ~ arch
           sh ~ zsh
           wm ~ i3-gaps
           dm ~ lightdm
           fm ~ thunar
         term ~ kitty/st
-      editor ~ code/nvim
+      editor ~ code/lvim
      browser ~ firefox
     launcher ~ rofi
   compositor ~ picom
