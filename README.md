@@ -35,4 +35,4 @@ notification ~ dunst
 - [owl4ce](https://github.com/owl4ce)
 - [bandithijo](https://github.com/bandithijo)
 - [adi1090x](https://github.com/adi1090x)
-- [siduck76](https://github.com/siduck76)
+- [abzcoding](https://github.com/abzcoding)
