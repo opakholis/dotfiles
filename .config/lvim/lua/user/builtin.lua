@@ -72,7 +72,7 @@ M.config = function()
 
   -- Treesitter
   -- =========================================
-  -- lvim.builtin.treesitter.autotag.enable = true
+  lvim.builtin.treesitter.autotag.enable = true
   lvim.builtin.treesitter.context_commentstring.enable = true
   lvim.builtin.treesitter.ensure_installed = "maintained"
   lvim.builtin.treesitter.ignore_install = { "haskell" }
