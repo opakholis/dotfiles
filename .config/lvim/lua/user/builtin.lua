@@ -102,6 +102,7 @@ M.config = function()
   -- Terminal
   -- =========================================
   lvim.builtin.terminal.active = true
+  lvim.builtin.terminal.float_opts = { border = "single", winblend = 8 }
   lvim.builtin.terminal.execs = {
     { "lazygit", "gg", "LazyGit" },
   }
@@ -116,7 +117,7 @@ M.config = function()
     }
 
     -- better keybindings for ts and tsx files
-    local langs = { "typescript", "typescriptreact" }
+   local langs = { "typescript", "typescriptreact" }
     local ftype = vim.bo.filetype
     if vim.tbl_contains(langs, ftype) then
       local ts_keys = {
