@@ -20,8 +20,7 @@ M.config = function()
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    t = { "<cmd>TodoLocList <cr>", "Todo" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics <Workspace>" },
   }
 
   -- Quit
