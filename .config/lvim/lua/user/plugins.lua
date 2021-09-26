@@ -76,7 +76,6 @@ M.config = function()
         require("user.neoscroll").config()
       end,
     },
-
     {
       "lukas-reineke/indent-blankline.nvim",
       setup = function()
@@ -101,6 +100,9 @@ M.config = function()
       config = function()
         require("telescope").load_extension "fzf"
       end,
+    },
+    {
+      "p00f/nvim-ts-rainbow",
     },
     {
       "ray-x/lsp_signature.nvim",
