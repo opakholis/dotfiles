@@ -45,10 +45,6 @@ M.config = function()
   -- Dashboard
   -- =========================================
   lvim.builtin.dashboard.active = true
-  lvim.builtin.dashboard.custom_section["m"] = {
-    description = { "  Marks              " },
-    command = "Telescope marks",
-  }
 
   -- LSP
   -- =========================================
@@ -61,10 +57,8 @@ M.config = function()
 
   -- Nvim Tree
   -- =========================================
-  lvim.builtin.nvimtree.side = "left"
-  lvim.builtin.nvimtree.show_icons.git = 1
+  lvim.builtin.nvimtree.setup.auto_open = 1
   lvim.builtin.nvimtree.hide_dotfiles = 0
-  lvim.builtin.nvimtree.ignore = { ".git" }
 
   -- Project
   -- =========================================
@@ -117,7 +111,7 @@ M.config = function()
     }
 
     -- better keybindings for ts and tsx files
-   local langs = { "typescript", "typescriptreact" }
+    local langs = { "typescript", "typescriptreact" }
     local ftype = vim.bo.filetype
     if vim.tbl_contains(langs, ftype) then
       local ts_keys = {
