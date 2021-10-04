@@ -77,6 +77,17 @@ M.config = function()
     lint_events = { "BufWrite", "CursorHold" },
   }
 
+  lvim.builtin.treesitter.on_config_done = function()
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      parser_config.jsonc.used_by = "json"
+      parser_config.markdown = {
+      install_info = {
+        url = "https://github.com/ikatyang/tree-sitter-markdown",
+        files = { "src/parser.c", "src/scanner.cc" },
+      },
+    }
+  end
+
   -- Telescope
   -- =========================================
   lvim.builtin.telescope.defaults.path_display = { shorten = 10 }
