@@ -15,13 +15,10 @@ M.config = function()
       config = function()
         vim.g.matchup_matchparen_offscreen = { method = "popup" }
       end,
-    },
-    {
+    },{
       "folke/lua-dev.nvim",
-      config = function()
-        require("user.lua_dev").config()
-      end,
       ft = "lua",
+      before = "williamboman/nvim-lsp-installer",
       disable = not lvim.builtin.lua_dev.active,
     },
     {
@@ -57,9 +54,6 @@ M.config = function()
     },
     {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
-      config = function()
-        require("user.ts_utils").config()
-      end,
       ft = {
         "javascript",
         "javascriptreact",
@@ -68,6 +62,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
+      before = "williamboman/nvim-lsp-installer",
     },
     {
       "karb94/neoscroll.nvim",
