@@ -47,6 +47,28 @@ M.config = function()
   end
   -- Zen
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
+
+  -- Additional keybindings
+  lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
+  lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
+  lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+  lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
+
+  local ok, _ = pcall(require, "vim.diagnostic")
+  if ok then
+   lvim.builtin.which_key.mappings["l"]["j"] = {
+      "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = 'single', focusable = false, source = 'always'}})<cr>",
+      "Next Diagnostic",
+    }
+   lvim.builtin.which_key.mappings["l"]["k"] = {
+      "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = 'single', focusable = false, source = 'always'}})<cr>",
+      "Prev Diagnostic",
+    }
+  end
+  lvim.builtin.which_key.mappings["lh"] = {
+    "<cmd>hi LspReferenceRead cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceText cterm=bold ctermbg=red guibg=#24283b<cr><cmd>hi LspReferenceWrite cterm=bold ctermbg=red guibg=#24283b<cr>",
+    "Clear HL",
+  }
 end
 
 return M
