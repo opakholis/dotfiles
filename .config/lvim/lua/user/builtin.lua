@@ -17,6 +17,10 @@ M.config = function()
   }
   -- lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.documentation.border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+  lvim.builtin.cmp.experimental = {
+    ghost_text = false,
+    native_menu = true,
+  }
   lvim.builtin.cmp.formatting = {
     format = function(entry, vim_item)
       local cmp_kind = require("user.lsp_kind").cmp_kind
@@ -79,8 +83,8 @@ M.config = function()
 
   lvim.builtin.treesitter.on_config_done = function()
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-      parser_config.jsonc.used_by = "json"
-      parser_config.markdown = {
+    parser_config.jsonc.used_by = "json"
+    parser_config.markdown = {
       install_info = {
         url = "https://github.com/ikatyang/tree-sitter-markdown",
         files = { "src/parser.c", "src/scanner.cc" },
