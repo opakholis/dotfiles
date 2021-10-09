@@ -24,7 +24,7 @@ lvim.lsp.automatic_servers_installation = true
 -- Language Specific
 -- =========================================
 require("user.null_ls").config()
-lvim.lsp.override = {"sumneko_lua", "tsserver"}
+lvim.lsp.override = { "sumneko_lua", "tsserver" }
 for _, server_name in pairs(lvim.lsp.override) do
   local lsp_installer_servers = require "nvim-lsp-installer.servers"
   local server_available, requested_server = lsp_installer_servers.get_server(server_name)
