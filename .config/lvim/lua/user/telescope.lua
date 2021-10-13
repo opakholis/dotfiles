@@ -250,9 +250,9 @@ function M.git_files()
     },
   }
 
-  opts.file_ignore_patterns = {
-    "^[.]vale/",
-  }
+  -- opts.file_ignore_patterns = {
+  --   "^[.]vale/",
+  -- }
   builtin.git_files(opts)
 end
 
