@@ -11,6 +11,7 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
+      nls.builtins.formatting.markdownlint,
       nls.builtins.formatting.prettierd,
       nls.builtins.formatting.stylua,
       -- nls.builtins.formatting.goimports,
@@ -42,14 +43,14 @@ M.config = function()
   --     },
   --   },
   -- }
-  lvim.lang.markdown.linters = {
-    {
-      exe = "markdownlint",
-    },
-    {
-      exe = "vale",
-    },
-  }
+  -- lvim.lang.markdown.linters = {
+  --   {
+  --     exe = "markdownlint",
+  --   },
+  --   {
+  --     exe = "vale",
+  --   },
+  -- }
 end
 
 return M
