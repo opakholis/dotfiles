@@ -106,7 +106,12 @@ M.config = function()
     "%.ttf",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
-  lvim.builtin.telescope.defaults.mappings.i["<esc>"] = require("telescope.actions").close
+  lvim.builtin.telescope.defaults.mappings = {
+    i = {
+      ["<esc>"] = require("telescope.actions").close,
+      ["<C-y>"] = require("telescope.actions").which_key,
+    }
+  }
 
   -- Terminal
   -- =========================================

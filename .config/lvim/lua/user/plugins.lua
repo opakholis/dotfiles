@@ -96,14 +96,6 @@ M.config = function()
       event = "BufRead",
     },
     {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      run = "make",
-      after = "telescope.nvim",
-      config = function()
-        require("telescope").load_extension "fzf"
-      end,
-    },
-    {
       "p00f/nvim-ts-rainbow",
     },
     {
