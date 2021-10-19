@@ -39,6 +39,10 @@ M.config = function()
   -- Dashboard
   -- =========================================
   lvim.builtin.dashboard.active = true
+  -- lvim.builtin.dashboard.custom_section.b = {
+  --   description = { "  Git files          " },
+  --   command = "Telescope git_files",
+  -- }
 
   -- LSP
   -- =========================================
@@ -74,9 +78,26 @@ M.config = function()
   -- Treesitter
   -- =========================================
   lvim.builtin.treesitter.autotag.enable = true
+  lvim.builtin.treesitter.highlight.enable = true
   lvim.builtin.treesitter.context_commentstring.enable = true
   lvim.builtin.treesitter.ensure_installed = "maintained"
-  lvim.builtin.treesitter.ignore_install = { "haskell" }
+  lvim.builtin.treesitter.ignore_install = {
+    "haskell",
+    "julia",
+    "ledger",
+    "ocaml",
+    "ocaml_interface",
+    "rst",
+    "scala",
+    "sparql",
+    "supercollider",
+    "swift",
+    "teal",
+    "toml",
+    "turtle",
+    "verilog",
+    "zig",
+  }
   lvim.builtin.treesitter.matchup.enable = true
   lvim.builtin.treesitter.query_linter = {
     enable = true,
