@@ -67,6 +67,10 @@ M.config = function()
   -- =========================================
   lvim.builtin.project.active = true
 
+  -- Statusline
+  -- =========================================
+  -- lvim.builtin.lualine.style = "default"
+
   -- Treesitter
   -- =========================================
   lvim.builtin.treesitter.autotag.enable = true
@@ -104,13 +108,14 @@ M.config = function()
     "%.svg",
     "%.otf",
     "%.ttf",
+    ".git",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
     i = {
       ["<esc>"] = require("telescope.actions").close,
       ["<C-y>"] = require("telescope.actions").which_key,
-    }
+    },
   }
 
   -- Terminal
