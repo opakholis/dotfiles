@@ -174,20 +174,6 @@ function M.grep_last_search(opts)
   builtin.grep_string(opts)
 end
 
-function M.installed_plugins()
-  builtin.find_files {
-    cwd = join_paths(os.getenv "LUNARVIM_RUNTIME_DIR", "site", "pack", "packer"),
-  }
-end
-
-function M.project_search()
-  builtin.find_files {
-    previewer = false,
-    layout_strategy = "vertical",
-    cwd = require("nvim_lsp.util").root_pattern ".git"(vim.fn.expand "%:p"),
-  }
-end
-
 function M.curbuf()
   local opts = themes.get_dropdown {
     winblend = 10,
