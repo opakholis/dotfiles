@@ -13,12 +13,12 @@ lvim.leader = "space"
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.persistence = { active = true } -- change to false if you don't want persistence
-lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 require("user.builtin").config()
 require("user.neovim").config()
 require("user.plugins").config()
 require("user.which_key").config()
 
+lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.lsp.automatic_servers_installation = true
 
 -- Language Specific
@@ -26,3 +26,6 @@ lvim.lsp.automatic_servers_installation = true
 require("user.null_ls").config()
 require("user.lsp_install").install()
 lvim.lsp.override = { "sumneko_lua", "tsserver" }
+
+-- Configure tailwindcss language server (conditionally)
+require "user.tailwindcss"
