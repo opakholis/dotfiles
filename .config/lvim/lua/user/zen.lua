@@ -13,8 +13,8 @@ M.config = function()
       width = 0.85,
       options = {
         signcolumn = "no", -- disable signcolumn
-        number = true, -- disable number column
-        relativenumber = true, -- disable relative numbers
+        number = false, -- disable number column
+        relativenumber = false, -- disable relative numbers
       },
     },
     plugins = {
