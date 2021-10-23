@@ -1,18 +1,17 @@
 local M = {}
 
 M.install = function()
-  lvim.lsp.on_attach_callback = function (client, _)
-    if client.name == 'tsserver' then
+  lvim.lsp.on_attach_callback = function(client, _)
+    if client.name == "tsserver" then
       client.resolved_capabilities.document_formatting = false
       client.resolved_capabilities.document_range_formatting = false
-    end   
+    end
   end
-   -- https://www.lunarvim.org/languages/#multi-languages-per-formatter
+  -- https://www.lunarvim.org/languages/#multi-languages-per-formatter
   for _, server_name in pairs(lvim.lsp.override) do
     local lsp_installer_servers = require "nvim-lsp-installer.servers"
     local server_available, requested_server = lsp_installer_servers.get_server(server_name)
     if server_available then
-      
       if not requested_server:is_installed() then
         if lvim.lsp.automatic_servers_installation then
           requested_server:install()
@@ -42,10 +41,6 @@ end
 M.generate_filetype = function(server_name)
   local filetypes = require("lvim.lsp.utils").get_supported_filetypes(server_name) or {}
   if not filetypes then
-    return
-  end
-
-  if require("lvim.lsp.templates").is_ignored(server_name, filetypes) then
     return
   end
 
