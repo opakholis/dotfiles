@@ -1,12 +1,6 @@
 local M = {}
 
 M.config = function()
-  local trouble_plugin = "folke/trouble.nvim"
-  local ok, _ = pcall(require, "vim.diagnostic")
-  if ok then
-    trouble_plugin = "HungryJoe/trouble.nvim"
-  end
-
   lvim.plugins = {
     {
       "andweeb/presence.nvim",
@@ -38,7 +32,7 @@ M.config = function()
       disable = not lvim.builtin.persistence.active,
     },
     {
-      trouble_plugin,
+      "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("trouble").setup()
@@ -71,13 +65,13 @@ M.config = function()
       },
       before = "williamboman/nvim-lsp-installer",
     },
-    {
-      "karb94/neoscroll.nvim",
-      event = "WinScrolled",
-      config = function()
-        require("user.neoscroll").config()
-      end,
-    },
+    -- {
+    --   "karb94/neoscroll.nvim",
+    --   event = "WinScrolled",
+    --   config = function()
+    --     require("user.neoscroll").config()
+    --   end,
+    -- },
     {
       "lukas-reineke/indent-blankline.nvim",
       setup = function()
