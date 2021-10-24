@@ -19,7 +19,7 @@ require("user.plugins").config()
 require("user.which_key").config()
 
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.automatic_servers_installation = false
 
 -- Language Specific
 -- =========================================
