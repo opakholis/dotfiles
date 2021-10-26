@@ -65,13 +65,13 @@ M.config = function()
       },
       before = "williamboman/nvim-lsp-installer",
     },
-    -- {
-    --   "karb94/neoscroll.nvim",
-    --   event = "WinScrolled",
-    --   config = function()
-    --     require("user.neoscroll").config()
-    --   end,
-    -- },
+    {
+      "karb94/neoscroll.nvim",
+      config = function()
+        require("neoscroll").setup()
+      end,
+      disable = not lvim.builtin.neoscroll.active,
+    },
     {
       "lukas-reineke/indent-blankline.nvim",
       setup = function()
