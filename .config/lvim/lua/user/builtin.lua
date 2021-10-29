@@ -27,13 +27,14 @@ M.config = function()
     buffer = "(Buffer)",
     nvim_lsp = "(LSP)",
     luasnip = "(Snip)",
-    treesitter = " ",
+    treesitter = "",
     nvim_lua = "(NvLua)",
-    spell = " 暈",
-    emoji = "  ",
-    path = "  ",
-    calc = "  ",
-    cmp_tabnine = "  ",
+    spell = "暈",
+    emoji = "",
+    path = "",
+    calc = "",
+    cmp_tabnine = "ﮧ",
+    ["vim-dadbod-completion"] = "𝓐",
   }
 
   -- Dashboard
@@ -82,11 +83,13 @@ M.config = function()
   lvim.builtin.treesitter.context_commentstring.enable = true
   lvim.builtin.treesitter.ensure_installed = "maintained"
   lvim.builtin.treesitter.ignore_install = {
+    "ember-language-server",
     "haskell",
     "julia",
     "ledger",
     "ocaml",
     "ocaml_interface",
+    "rome",
     "rst",
     "scala",
     "sparql",
@@ -122,14 +125,18 @@ M.config = function()
   lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
-    "node_modules",
+    "%.lock",
+    "__pycache__/*",
+    "%.sqlite3",
+    "%.ipynb",
+    "node_modules/*",
     "%.jpg",
     "%.jpeg",
     "%.png",
     "%.svg",
     "%.otf",
     "%.ttf",
-    ".git",
+    ".git/",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
