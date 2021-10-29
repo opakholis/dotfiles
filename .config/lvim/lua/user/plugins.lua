@@ -70,6 +70,7 @@ M.config = function()
       config = function()
         require("neoscroll").setup()
       end,
+      event = "BufRead",
       disable = not lvim.builtin.neoscroll.active,
     },
     {
@@ -84,6 +85,18 @@ M.config = function()
     },
     {
       "Mofiqul/dracula.nvim",
+    },
+    {
+      "nathom/filetype.nvim", -- Replace default filetype.vim which is slower
+      config = function()
+        require("filetype").setup {
+          overrides = {
+            literal = {
+              [".gitignore"] = "conf",
+            },
+          },
+        }
+      end,
     },
     {
       "norcalli/nvim-colorizer.lua",

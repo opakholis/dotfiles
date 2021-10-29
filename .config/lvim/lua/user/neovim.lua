@@ -1,21 +1,25 @@
 local M = {}
 
 M.config = function()
-  vim.opt.relativenumber = true
-  vim.opt.wrap = true
-  vim.opt.timeoutlen = 200
-  vim.o.foldmethod = "expr"
-  vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-  vim.o.foldlevel = 4
-  vim.o.foldtext =
-    [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
-  vim.o.fillchars = "fold: "
-  vim.o.foldnestmax = 3
-  vim.o.foldminlines = 1
-  -- vim.opt.guifont = "FiraCode Nerd Font:h13"
-  vim.opt.cmdheight = 1
+  vim.g.did_load_filetypes = 1
   vim.g.dashboard_enable_session = 0
   vim.g.dashboard_disable_statusline = 1
+  vim.opt.shada = "!,'0,f0,<50,s10,h"
+  vim.opt.relativenumber = true
+  vim.opt.wrap = true
+  vim.opt.termguicolors = true
+  vim.opt.timeoutlen = 200
+  vim.opt.wrapscan = true -- Searches wrap around the end of the file
+  vim.opt.foldmethod = "expr"
+  vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+  vim.opt.foldlevel = 4
+  vim.opt.foldtext =
+    [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
+  vim.opt.fillchars = "fold: "
+  vim.opt.foldnestmax = 3
+  vim.opt.foldminlines = 1
+  -- vim.opt.guifont = "FiraCode Nerd Font:h13"
+  vim.opt.cmdheight = 1
   vim.opt.pumblend = 10
   vim.opt.joinspaces = false
   vim.opt.list = true
