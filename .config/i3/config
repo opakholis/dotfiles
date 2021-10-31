@@ -4,7 +4,7 @@ set $super Mod4
 set $alt Mod1
 
 # font
-font pango:"JetBrainsMono Nerd Font" 10
+font pango:"CaskaydiaCove Nerd Font" 11
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -21,6 +21,7 @@ exec_always --no-startup-id picom -b
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
 exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 "betterlockscreen -l dim" "" --timer 3600 "systemctl suspend" "" &
+exec_always --no-startup-id ~/.screenlayout/tn.sh
 exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst
 #exec --no-startup-id xfce4-power-manager
@@ -29,10 +30,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ### BINDINGS
 # core
-bindsym $super+Return	          exec --no-startup-id kitty
+bindsym $super+Shift+t          exec --no-startup-id kitty
 bindsym $super+Shift+e	        exec --no-startup-id thunar
-bindsym $super+Shift+t 	        exec --no-startup-id st -g 68x12
-bindsym $super+Shift+p 	        exec --no-startup-id pavucontrol
+bindsym $super+Return 	        exec --no-startup-id st -g 68x12
 bindsym $super+Shift+w	        exec --no-startup-id exo-open --launch WebBrowser
 
 # appmenu
@@ -147,9 +147,9 @@ bindsym $super+Right focus right
 bindsym $super+Shift+space focus mode_toggle
 
 # move focused window
-bindsym $super+Shift+h move left 1px
-bindsym $super+Shift+j move down 1px
-bindsym $super+Shift+k move up 1px
+bindsym $super+Shift+h move left  1px
+bindsym $super+Shift+j move down  1px
+bindsym $super+Shift+k move up    1px
 bindsym $super+Shift+l move right 1px
 
 # alternatively, you can use the cursor keys:semicolon
@@ -223,19 +223,20 @@ client.background       #f8f8f2
 
 ### APPLICATION SETTINGS
 # assign applications to specific workspace
-assign [class="(?i)(?:kitty)"]      → workspace 1
-assign [class="(?i)(?:code)"]       → workspace 2
-assign [class="(?i)(?:firefox*)"]   → workspace 3
-assign [class="(?i)(?:thunar)"]     → workspace 4
-assign [class="(?i)(?:Xreader)"]    → workspace 5
-assign [class="(?i)(?:Kotatogram*)"]   → workspace 6
+assign [class="St"]                   → workspace 1
+assign [class="(?i)(?:code)"]         → workspace 2
+assign [class="(?i)(?:firefox*)"]     → workspace 3
+assign [class="(?i)(?:thunar)"]       → workspace 4
+assign [class="(?i)(?:Xreader)"]      → workspace 5
+assign [class="(?i)(?:Kotatogram*)"]  → workspace 6
 
 # focus, floating, & sticky
-for_window [class="(?i)(?:qt5ct|feh|arandr|thunar|nm-connection-editor|SimpleScreenRecorder)"] floating enable, center
-for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance|xarchiver|st)"]     floating enable, center
-for_window [class="(?i)(?:gpick|xfce4-appearance-settings|system-config-printer|viewnior)"] floating enable, center
-for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
-for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
+for_window [class="(?i)(?:qt5ct|feh|arandr|thunar|nm-connection-editor|SimpleScreenRecorder)"]  floating enable, center
+for_window [class="(?i)(?:pavucontrol|blueman-manager|woeusbgui|lxappearance|xarchiver|kitty)"] floating enable, center
+for_window [class="(?i)(?:gpick|xfce4-appearance-settings|system-config-printer|viewnior|AudioRelay)"]     floating enable, center
+for_window [class="jetbrains-studio" title="win0"]   floating enable border none
+# for_window [class="jetbrains-studio" title="Welcome to Android Studio"]   floating enable
+# for_window [class="jetbrains-studio" title="Android Studio Setup Wizard"] floating enable
 for_window [class="firefox*" title="About Firefox*"]      floating enable
 for_window [class="firefox*" title="Library"]             floating enable
 
