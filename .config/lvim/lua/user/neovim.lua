@@ -10,19 +10,28 @@ M.config = function()
   vim.opt.termguicolors = true
   vim.opt.timeoutlen = 200
   vim.opt.wrapscan = true -- Searches wrap around the end of the file
-  vim.opt.foldmethod = "expr"
-  vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-  vim.opt.foldlevel = 4
-  vim.opt.foldtext =
+  vim.wo.foldmethod = "expr"
+  vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+  vim.wo.foldlevel = 4
+  vim.wo.foldtext =
     [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
-  vim.opt.fillchars = "fold: "
-  vim.opt.foldnestmax = 3
-  vim.opt.foldminlines = 1
+  vim.wo.foldnestmax = 3
+  vim.wo.foldminlines = 1
   -- vim.opt.guifont = "FiraCode Nerd Font:h13"
   vim.opt.cmdheight = 1
   vim.opt.pumblend = 10
   vim.opt.joinspaces = false
   vim.opt.list = true
+  vim.opt.fillchars = {
+    vert = "▕", -- alternatives │
+    fold = " ",
+    eob = " ", -- suppress ~ at EndOfBuffer
+    diff = "╱", -- alternatives = ⣿ ░ ─
+    msgsep = "‾",
+    foldopen = "▾",
+    foldsep = "│",
+    foldclose = "▸",
+  }
   vim.opt.wildignore = {
     "*.aux,*.out,*.toc",
     "*.o,*.obj,*.dll,*.jar,*.pyc,__pycache__,*.rbc,*.class",
