@@ -54,6 +54,10 @@ M.config = function()
       event = "BufRead",
     },
     {
+      "github/copilot.vim",
+      disable = not lvim.builtin.sell_your_soul_to_devil,
+    },
+    {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
       ft = {
         "javascript",
