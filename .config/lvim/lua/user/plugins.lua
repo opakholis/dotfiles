@@ -67,6 +67,7 @@ M.config = function()
         "typescriptreact",
         "typescript.tsx",
       },
+      opt = true,
       before = "williamboman/nvim-lsp-installer",
     },
     {
@@ -96,6 +97,7 @@ M.config = function()
         require("filetype").setup {
           overrides = {
             literal = {
+              ["kitty.conf"] = "kitty",
               [".gitignore"] = "conf",
             },
           },
