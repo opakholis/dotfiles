@@ -10,6 +10,7 @@ lvim.leader = "space"
 
 -- Customization
 -- =========================================
+lvim.builtin.sell_your_soul_to_devil = true -- id you want microsoft to abuse your soul
 lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.persistence = { active = true } -- change to false if you don't want persistence
