@@ -44,20 +44,22 @@ M.config = function()
   }
 
   -- Quit
-  if lvim.builtin.persistence then
-    lvim.builtin.which_key.mappings["q"] = {
-      name = "+Quit",
-      d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
-      l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
-      s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
-    }
-  end
+  -- if lvim.builtin.persistence then
+  --   lvim.builtin.which_key.mappings["q"] = {
+  --     name = "+Quit",
+  --     d = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+  --     l = { "<cmd>lua require('persistence').load(last=true)<cr>", "Restore last session" },
+  --     s = { "<cmd>lua require('persistence').load()<cr>", "Restore for current dir" },
+  --   }
+  -- end
+
   -- Zen
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
 
   -- Additional keybindings
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+  lvim.keys.normal_mode["gA"] = "<cmd>lua vim.lsp.codelens.run()<cr>"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
 
   local ok, _ = pcall(require, "vim.diagnostic")
