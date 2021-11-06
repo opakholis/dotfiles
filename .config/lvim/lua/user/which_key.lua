@@ -57,7 +57,9 @@ M.config = function()
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen" }
 
   -- Additional keybindings
+  lvim.keys.insert_mode["jk"] = "<ESC>:w<CR>"
   lvim.keys.insert_mode["<C-s>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>"
+  lvim.keys.normal_mode["<C-a>"] = "<ESC>ggVG<CR>"
   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   lvim.keys.normal_mode["gA"] = "<cmd>lua vim.lsp.codelens.run()<cr>"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
