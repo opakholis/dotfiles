@@ -11,29 +11,26 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
-      nls.builtins.formatting.markdownlint,
       nls.builtins.formatting.prettierd,
       nls.builtins.formatting.stylua,
       -- nls.builtins.formatting.goimports,
       -- nls.builtins.formatting.cmake_format,
-      -- nls.builtins.formatting.scalafmt,
-      nls.builtins.formatting.sqlformat,
-      -- nls.builtins.formatting.terraform_fmt,
+      -- nls.builtins.formatting.sqlformat,
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
-      -- nls.builtins.diagnostics.hadolint,
       nls.builtins.diagnostics.eslint_d,
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.luacheck,
       nls.builtins.diagnostics.vint,
-      -- nls.builtins.diagnostics.chktex,
     },
   }
 
   -- or use the lunarvim syntax
-  -- lvim.lang.python.formatters = {
+  -- local formatters = require "lvim.lsp.null-ls.formatters"
+  -- formatters.setup {
   --   {
   --     exe = "black",
   --     args = { "--fast" },
+  --     filetypes = { "python" },
   --   },
   --   {
   --     exe = "isort",
@@ -41,16 +38,16 @@ M.config = function()
   --       "--profile",
   --       "black",
   --     },
+  --     filetypes = { "python" },
   --   },
   -- }
-  -- lvim.lang.markdown.linters = {
-  --   {
-  --     exe = "markdownlint",
-  --   },
-  --   {
-  --     exe = "vale",
-  --   },
-  -- }
+  local linters = require "lvim.lsp.null-ls.linters"
+  linters.setup {
+    {
+      exe = "markdownlint",
+      filetypes = { "markdown" },
+    },
+  }
 end
 
 return M
