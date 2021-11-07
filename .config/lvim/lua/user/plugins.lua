@@ -113,11 +113,15 @@ M.config = function()
     },
     {
       "p00f/nvim-ts-rainbow",
+      event = "BufRead",
+      config = function()
+        require("user.ts_rainbow").config()
+      end,
     },
     {
       "ray-x/lsp_signature.nvim",
       config = function()
-        require("user/lsp_signature").config()
+        require("user.lsp_signature").config()
       end,
       event = "BufRead",
     },
