@@ -15,6 +15,7 @@ lvim.builtin.lua_dev = { active = false } -- change this to enable/disable folke
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.persistence = { active = false } -- change to false if you don't want persistence
 lvim.builtin.neoscroll = { active = true } -- smooth scrolling
+lvim.builtin.fancy_rename = { active = true } -- fancy rename
 require("user.builtin").config()
 require("user.neovim").config()
 require("user.plugins").config()

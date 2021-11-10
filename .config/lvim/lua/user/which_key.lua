@@ -63,6 +63,10 @@ M.config = function()
   lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
   lvim.keys.normal_mode["gA"] = "<cmd>lua vim.lsp.codelens.run()<cr>"
   lvim.keys.normal_mode["gv"] = "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>"
+  lvim.keys.visual_mode["<leader>lr"] = "<Cmd>lua require('renamer').rename()<CR>"
+  if lvim.builtin.fancy_rename then
+    lvim.builtin.which_key.mappings["l"]["r"] = { "<cmd>lua require('renamer').rename()<cr>", "Rename" }
+  end
 
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then

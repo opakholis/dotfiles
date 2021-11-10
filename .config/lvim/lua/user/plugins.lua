@@ -17,6 +17,15 @@ M.config = function()
       end,
     },
     {
+      "filipdutescu/renamer.nvim",
+      config = function()
+        require("renamer").setup {
+          title = "Rename",
+        }
+      end,
+      disable = not lvim.builtin.fancy_rename.active,
+    },
+    {
       "folke/lua-dev.nvim",
       ft = "lua",
       before = "williamboman/nvim-lsp-installer",
