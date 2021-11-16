@@ -14,13 +14,13 @@ alias merge='xrdb merge'
 alias load="kill -USR1 $(pidof st)"
 alias picom='killall picom && picom -b'
 alias aria='aria2c -s16 -x16 --dir=/mnt/Mark-I/Atomic'
-alias tuxii="tuxi -l LANG_id_ID"
 
 # exa
 # details information about shortcut https://the.exa.website/docs/command-line-options
 alias ls="exa"
 alias lsa="exa -alh"
-alias lst="exa -lhTL=2 --icons"
+alias lst="exa -T --icons"
+alias lsl="exa -lhTL=2 --icons"
 
 # git
 alias g="git"
@@ -59,7 +59,15 @@ alias pipes1-slim="~/.color-toys/pipes2-slim"
 export GPG_TTY=$(tty)
 
 # android development
-export PATH="$PATH:opt/flutter/bin"
+# export PATH="$PATH:opt/flutter/bin"
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export ANDROID_HOME=$HOME/Android/Sdk
+
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export REACT_EDITOR="nvim"
 
 # Less Colors for Man Pages
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
