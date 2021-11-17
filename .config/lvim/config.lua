@@ -11,7 +11,7 @@ lvim.leader = "space"
 -- Customization
 -- =========================================
 lvim.builtin.sell_your_soul_to_devil = true -- if you want microsoft to abuse your soul
-lvim.builtin.lua_dev = { active = false } -- change this to enable/disable folke/lua_dev
+lvim.builtin.lua_dev = { active = true } -- change this to enable/disable folke/lua_dev
 lvim.builtin.presence = { active = false } -- change to true if you want discord presence
 lvim.builtin.persistence = { active = false } -- change to false if you don't want persistence
 lvim.builtin.neoscroll = { active = true } -- smooth scrolling
@@ -30,12 +30,6 @@ lvim.lsp.automatic_servers_installation = false
 local custom_servers = { "sumneko_lua", "tsserver" }
 vim.list_extend(lvim.lsp.override, custom_servers)
 require("user.null_ls").config()
-for _, server_name in ipairs(custom_servers) do
-  local status_ok, custom_config = pcall(require, "/user/providers/" .. server_name)
-  if status_ok then
-    require("lvim.lsp.manager").setup(server_name, custom_config)
-  end
-end
 
 -- Configure tailwindcss language server (conditionally)
 require "user.tailwindcss"
