@@ -27,7 +27,7 @@ lvim.lsp.automatic_servers_installation = false
 
 -- Language Specific
 -- =========================================
-local custom_servers = { "sumneko_lua", "tsserver" }
+local custom_servers = { "jsonls", "sumneko_lua", "tsserver" }
 vim.list_extend(lvim.lsp.override, custom_servers)
 require("user.null_ls").config()
 
