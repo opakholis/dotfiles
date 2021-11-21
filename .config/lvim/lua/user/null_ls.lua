@@ -21,31 +21,12 @@ M.config = function()
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.luacheck,
       nls.builtins.diagnostics.vint,
-    },
-  }
-
-  -- or use the lunarvim syntax
-  -- local formatters = require "lvim.lsp.null-ls.formatters"
-  -- formatters.setup {
-  --   {
-  --     exe = "black",
-  --     args = { "--fast" },
-  --     filetypes = { "python" },
-  --   },
-  --   {
-  --     exe = "isort",
-  --     args = {
-  --       "--profile",
-  --       "black",
-  --     },
-  --     filetypes = { "python" },
-  --   },
-  -- }
-  local linters = require "lvim.lsp.null-ls.linters"
-  linters.setup {
-    {
-      exe = "markdownlint",
-      filetypes = { "markdown" },
+      nls.builtins.diagnostics.markdownlint.with {
+        filetypes = { "markdown" },
+      },
+      nls.builtins.diagnostics.vale.with {
+        filetypes = { "markdown" },
+      },
     },
   }
 end
