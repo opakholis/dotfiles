@@ -89,9 +89,9 @@ M.config = function()
   -- =========================================
   lvim.lsp.diagnostics.signs.values = {
     { name = "LspDiagnosticsSignError", text = " " },
-    { name = "LspDiagnosticsSignWarning", text = "" },
-    { name = "LspDiagnosticsSignHint", text = "" },
-    { name = "LspDiagnosticsSignInformation", text = "" },
+    { name = "LspDiagnosticsSignWarning", text = " " },
+    { name = "LspDiagnosticsSignInformation", text = "" },
+    { name = "LspDiagnosticsSignHint", text = " " },
   }
 
   -- Nvim Tree
@@ -101,16 +101,40 @@ M.config = function()
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
+      hint = "",
+      info = "",
       warning = "",
       error = "",
+    },
+  }
+  lvim.builtin.nvimtree.icons = {
+    default = "",
+    symlink = "",
+    git = {
+      unstaged = "",
+      staged = "",
+      unmerged = "",
+      renamed = "➜",
+      untracked = "",
+      deleted = "",
+      ignored = "◌",
+    },
+    folder = {
+      arrow_closed = "",
+      arrow_open = "",
+      default = "",
+      open = "",
+      empty = "",
+      empty_open = "",
+      symlink = "",
+      symlink_open = "",
     },
   }
 
   -- Project
   -- =========================================
   lvim.builtin.project.active = true
+  lvim.builtin.project.detection_methods = { "lsp", "pattern" }
 
   -- Statusline
   -- =========================================
@@ -197,6 +221,9 @@ M.config = function()
     end,
     find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
   }
+  lvim.builtin.telescope.on_config_done = function(telescope)
+    telescope.load_extension "file_create"
+  end
 
   -- Terminal
   -- =========================================
