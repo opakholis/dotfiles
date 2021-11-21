@@ -17,6 +17,9 @@ M.config = function()
       end,
     },
     {
+      "b0o/schemastore.nvim",
+    },
+    {
       "filipdutescu/renamer.nvim",
       config = function()
         require("renamer").setup {
@@ -86,6 +89,13 @@ M.config = function()
       end,
       event = "BufRead",
       disable = not lvim.builtin.neoscroll.active,
+    },
+    {
+      "kosayoda/nvim-lightbulb",
+      config = function()
+        vim.fn.sign_define("LightBulbSign", { text = "", texthl = "DiagnosticInfo" })
+      end,
+      event = "BufRead",
     },
     {
       "lukas-reineke/indent-blankline.nvim",
