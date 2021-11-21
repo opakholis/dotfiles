@@ -58,6 +58,7 @@ M.config = function()
       "packer",
       "neogitstatus",
       "NvimTree",
+      "Outline",
       "Trouble",
       "lspinfo",
       "", -- for all buffers without a file type
