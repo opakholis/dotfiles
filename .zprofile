@@ -14,6 +14,7 @@ alias merge='xrdb merge'
 alias load="kill -USR1 $(pidof st)"
 alias picom='killall picom && picom -b'
 alias aria='aria2c -s16 -x16 --dir=/mnt/Mark-I/Atomic'
+alias bench.sh='curl -Lso- bench.sh | bash'
 
 # exa
 # details information about shortcut https://the.exa.website/docs/command-line-options
@@ -60,7 +61,6 @@ export GPG_TTY=$(tty)
 
 # android development
 # export PATH="$PATH:opt/flutter/bin"
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export ANDROID_HOME=$HOME/Android/Sdk
 
 export PATH=$PATH:$ANDROID_HOME/emulator
