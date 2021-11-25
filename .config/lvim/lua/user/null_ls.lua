@@ -21,12 +21,12 @@ M.config = function()
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.luacheck,
       nls.builtins.diagnostics.vint,
-      nls.builtins.diagnostics.markdownlint.with {
-        filetypes = { "markdown" },
-      },
-      nls.builtins.diagnostics.vale.with {
-        filetypes = { "markdown" },
-      },
+      -- nls.builtins.diagnostics.markdownlint.with {
+      --   filetypes = { "markdown" },
+      -- },
+      -- nls.builtins.diagnostics.vale.with {
+      --   filetypes = { "markdown" },
+      -- },
     },
   }
 end
