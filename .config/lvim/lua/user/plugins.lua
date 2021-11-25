@@ -107,6 +107,7 @@ M.config = function()
       end,
       event = "BufRead",
     },
+    { "mfussenegger/nvim-jdtls", ft = "java" },
     {
       "Mofiqul/dracula.nvim",
     },
