@@ -93,7 +93,10 @@ M.config = function()
     {
       "kosayoda/nvim-lightbulb",
       config = function()
-        vim.fn.sign_define("LightBulbSign", { text = "", texthl = "DiagnosticInfo" })
+        vim.fn.sign_define(
+          "LightBulbSign",
+          { text = require("user.lsp_kind").icons.code_action, texthl = "DiagnosticInfo" }
+        )
       end,
       event = "BufRead",
     },

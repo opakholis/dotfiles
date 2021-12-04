@@ -1,6 +1,6 @@
-local lspkind = {}
+local M = {}
 
-local kind_symbols = {
+M.cmp_kind = {
   Class = " ",
   Color = " ",
   Constant = "ﲀ ",
@@ -29,12 +29,36 @@ local kind_symbols = {
   Default = " ",
 }
 
-function lspkind.cmp_kind(kind)
-  return kind_symbols[kind] or ""
-end
+M.icons = {
+  error = " ",
+  warn = " ",
+  info = "",
+  hint = " ",
+  code_action = "",
+}
 
-function lspkind.symbols()
-  return kind_symbols
-end
+M.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "",
+    staged = "",
+    unmerged = "",
+    renamed = "➜",
+    untracked = "",
+    deleted = "",
+    ignored = "◌",
+  },
+  folder = {
+    arrow_closed = "",
+    arrow_open = "",
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+    symlink_open = "",
+  },
+}
 
-return lspkind
+return M
