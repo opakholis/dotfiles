@@ -1,10 +1,11 @@
 -- Neovim
 -- =========================================
+vim.lsp.set_log_level "warn"
+lvim.debug = false
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.transparent_window = false
-lvim.hide_dotfiles = false
 lvim.colorscheme = "dracula"
 lvim.leader = "space"
 
@@ -25,9 +26,14 @@ lvim.builtin.notify.active = false
 lvim.lsp.diagnostics.virtual_text = false -- remove this line if you want to see inline errors
 lvim.lsp.automatic_servers_installation = false
 
+require "user.lualine"
+
 -- Language Specific
 -- =========================================
 require("user.null_ls").config()
+
+-- Configure emmet language server (conditionally)
+require "user.emmet"
 
 -- Configure tailwindcss language server (conditionally)
 require "user.tailwindcss"
