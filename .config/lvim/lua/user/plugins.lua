@@ -11,7 +11,7 @@ M.config = function()
     },
     {
       "andymass/vim-matchup",
-      event = "CursorMoved",
+      event = "BufReadPost",
       config = function()
         vim.g.matchup_matchparen_offscreen = { method = "popup" }
       end,
@@ -67,6 +67,11 @@ M.config = function()
     },
     {
       "github/copilot.vim",
+      config = function()
+        vim.g.copilot_no_tab_map = true
+        vim.g.copilot_assume_mapped = true
+        vim.g.copilot_tab_fallback = ""
+      end,
       disable = not lvim.builtin.sell_your_soul_to_devil,
     },
     {
