@@ -19,8 +19,8 @@ M.config = function()
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
       nls.builtins.diagnostics.eslint_d,
       nls.builtins.diagnostics.shellcheck,
-      nls.builtins.diagnostics.luacheck,
-      nls.builtins.diagnostics.vint,
+      -- nls.builtins.diagnostics.luacheck,
+      -- nls.builtins.diagnostics.vint,
       -- nls.builtins.diagnostics.markdownlint.with {
       --   filetypes = { "markdown" },
       -- },
