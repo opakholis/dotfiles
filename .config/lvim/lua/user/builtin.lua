@@ -39,20 +39,7 @@ M.config = function()
     ["vim-dadbod-completion"] = "𝓐",
   }
   if lvim.builtin.sell_your_soul_to_devil then
-    -- lvim.builtin.cmp.experimental.ghost_text = true
-    vim.g.copilot_no_tab_map = true
-    vim.g.copilot_assume_mapped = true
-    vim.g.copilot_tab_fallback = ""
-    local cmp = require "cmp"
-    lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
-      cmp.mapping.abort()
-      local copilot_keys = vim.fn["copilot#Accept"]()
-      if copilot_keys ~= "" then
-        vim.api.nvim_feedkeys(copilot_keys, "i", true)
-      else
-        fallback()
-      end
-    end
+    lvim.keys.insert_mode["<c-h>"] = { [[copilot#Accept("\<CR>")]], { expr = true, script = true } }
   end
 
   -- Comment
@@ -89,11 +76,13 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.diagnostics.float.border = "single"
+  lvim.lsp.diagnostics.float.focusable = false
   lvim.lsp.diagnostics.signs.values = {
-    { name = "LspDiagnosticsSignError", text = kind.icons.error },
-    { name = "LspDiagnosticsSignWarning", text = kind.icons.warn },
-    { name = "LspDiagnosticsSignInformation", text = kind.icons.info },
-    { name = "LspDiagnosticsSignHint", text = kind.icons.hint },
+    { name = "DiagnosticSignError", text = kind.icons.error },
+    { name = "DiagnosticSignWarn", text = kind.icons.warn },
+    { name = "DiagnosticSignInfo", text = kind.icons.info },
+    { name = "DiagnosticSignHint", text = kind.icons.hint },
   }
   local ok, _ = pcall(require, "vim.diagnostic")
   if ok then
@@ -187,8 +176,8 @@ M.config = function()
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
   lvim.builtin.telescope.defaults.mappings = {
     i = {
-      ["<C-c>"] = require("telescope.actions").close,
-      ["<C-y>"] = require("telescope.actions").which_key,
+      ["<c-c>"] = require("telescope.actions").close,
+      ["<c-y>"] = require("telescope.actions").which_key,
     },
   }
   local telescope_actions = require "telescope.actions.set"
@@ -211,9 +200,6 @@ M.config = function()
   -- =========================================
   lvim.builtin.terminal.active = true
   lvim.builtin.terminal.float_opts = { border = "single", winblend = 8 }
-  lvim.builtin.terminal.execs = {
-    { "lazygit", "gg", "LazyGit" },
-  }
 
   -- WhichKey
   -- =========================================
