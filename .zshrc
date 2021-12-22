@@ -11,12 +11,13 @@ TYPEWRITTEN_SYMBOL="λ"
 plugins=(
   bgnotify
   fast-syntax-highlighting
-  z.lua
+  zoxide
   zsh-autosuggestions
   zsh-completions
   )
 
 autoload -U compinit && compinit
+
 source $ZSH/oh-my-zsh.sh
 
 # global (valid for all machines) aliases
