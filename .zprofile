@@ -5,6 +5,7 @@
 
 alias c="clear"
 alias q="exit"
+alias cd="z"
 alias pg="gping 1.1.1.1"
 alias remove="sudo pacman -Rcns"
 alias update="sudo pacman -Syyu"
