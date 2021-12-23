@@ -85,6 +85,7 @@ M.config = function()
         "typescript.tsx",
       },
       opt = true,
+      event = "BufReadPre",
       before = "williamboman/nvim-lsp-installer",
     },
     {
@@ -104,6 +105,7 @@ M.config = function()
         )
       end,
       event = "BufRead",
+      ft = { "typescript", "typescriptreact" },
     },
     {
       "lukas-reineke/indent-blankline.nvim",
