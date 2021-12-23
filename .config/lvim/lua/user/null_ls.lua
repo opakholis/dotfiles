@@ -7,7 +7,7 @@ M.config = function()
   end
 
   -- you can either config null-ls itself
-  nls.config {
+  nls.setup {
     debounce = 150,
     save_after_format = false,
     sources = {

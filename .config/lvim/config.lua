@@ -30,6 +30,7 @@ require "user.lualine"
 
 -- Language Specific
 -- =========================================
+vim.list_extend(lvim.lsp.override, { "tsserver", "sumneko_lua", "jsonls" })
 require("user.null_ls").config()
 
 -- Configure emmet language server (conditionally)
