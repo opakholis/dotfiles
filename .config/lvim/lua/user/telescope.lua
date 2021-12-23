@@ -1,8 +1,8 @@
 local M = {}
--- local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 local themes = require "telescope.themes"
 local builtin = require "telescope.builtin"
+local actions = require "telescope.actions"
 
 -- beautiful default layout for telescope prompt
 function M.layout_config()
@@ -177,9 +177,18 @@ end
 function M.curbuf()
   local opts = themes.get_dropdown {
     winblend = 10,
-    border = true,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
+    layout_config = {
+      width = 0.45,
+      prompt_position = "top",
+    },
   }
   builtin.current_buffer_fuzzy_find(opts)
 end
@@ -187,9 +196,18 @@ end
 function M.git_status()
   local opts = themes.get_dropdown {
     winblend = 10,
-    border = true,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
+    layout_config = {
+      width = 0.45,
+      prompt_position = "top",
+    },
   }
 
   -- Can change the git icons using this.
@@ -221,7 +239,7 @@ function M.git_files()
     path = nil
   end
 
-  local width = 0.35
+  local width = 0.45
   if path and string.find(path, "sourcegraph.*sourcegraph", 1, false) then
     width = 0.6
   end
@@ -230,9 +248,16 @@ function M.git_files()
     winblend = 5,
     previewer = false,
     shorten_path = false,
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
     cwd = path,
     layout_config = {
       width = width,
+      prompt_position = "top",
     },
   }
 
