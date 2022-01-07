@@ -69,10 +69,6 @@ M.config = function()
   -- Dashboard
   -- =========================================
   lvim.builtin.dashboard.active = true
-  -- lvim.builtin.dashboard.custom_section.b = {
-  --   description = { "  Git files          " },
-  --   command = "Telescope git_files",
-  -- }
 
   -- LSP
   -- =========================================
@@ -174,10 +170,34 @@ M.config = function()
     ".git/",
   }
   lvim.builtin.telescope.defaults.layout_config = require("user.telescope").layout_config()
+  local actions = require "telescope.actions"
+  local custom_actions = require "user.telescope"
   lvim.builtin.telescope.defaults.mappings = {
     i = {
       ["<c-c>"] = require("telescope.actions").close,
       ["<c-y>"] = require("telescope.actions").which_key,
+      ["<tab>"] = actions.toggle_selection + actions.move_selection_next,
+      ["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
+      ["<cr>"] = custom_actions.multi_selection_open,
+      ["<c-v>"] = custom_actions.multi_selection_open_vsplit,
+      ["<c-s>"] = custom_actions.multi_selection_open_split,
+      ["<c-t>"] = custom_actions.multi_selection_open_tab,
+      ["<c-j>"] = actions.move_selection_next,
+      ["<c-k>"] = actions.move_selection_previous,
+    },
+    n = {
+      ["<esc>"] = actions.close,
+      ["<tab>"] = actions.toggle_selection + actions.move_selection_next,
+      ["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
+      ["<cr>"] = custom_actions.multi_selection_open,
+      ["<c-v>"] = custom_actions.multi_selection_open_vsplit,
+      ["<c-s>"] = custom_actions.multi_selection_open_split,
+      ["<c-t>"] = custom_actions.multi_selection_open_tab,
+      ["<c-j>"] = actions.move_selection_next,
+      ["<c-k>"] = actions.move_selection_previous,
+      ["<c-n>"] = actions.cycle_history_next,
+      ["<c-p>"] = actions.cycle_history_prev,
+      ["<c-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
     },
   }
   local telescope_actions = require "telescope.actions.set"
@@ -205,24 +225,14 @@ M.config = function()
   -- =========================================
   lvim.builtin.which_key.setup.window.winblend = 10
   lvim.builtin.which_key.setup.window.border = "single"
+  lvim.builtin.which_key.setup.ignore_missing = true
   lvim.builtin.which_key.on_config_done = function(wk)
     local keys = {
       ["ga"] = { "<cmd>lua require('user.telescope').code_actions()<CR>", "Code Action" },
       ["gR"] = { "<cmd>Trouble lsp_references<CR>", "Goto References" },
       ["gI"] = { "<cmd>lua require('user.telescope').lsp_implementations()<CR>", "Goto Implementation" },
+      ["gA"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
     }
-
-    -- better keybindings for ts and tsx files
-    local langs = { "typescript", "typescriptreact" }
-    local ftype = vim.bo.filetype
-    if vim.tbl_contains(langs, ftype) then
-      local ts_keys = {
-        ["gA"] = { "<cmd>TSLspImportAll<CR>", "Import All" },
-        ["gr"] = { "<cmd>TSLspRenameFile<CR>", "Rename File" },
-        ["gS"] = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
-      }
-      wk.register(ts_keys, { mode = "n" })
-    end
     wk.register(keys, { mode = "n" })
   end
 
