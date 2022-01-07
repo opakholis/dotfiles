@@ -29,12 +29,6 @@ M.config = function()
       disable = not lvim.builtin.fancy_rename.active,
     },
     {
-      "folke/lua-dev.nvim",
-      ft = "lua",
-      before = "williamboman/nvim-lsp-installer",
-      disable = not lvim.builtin.lua_dev.active,
-    },
-    {
       "folke/persistence.nvim",
       event = "BufReadPre",
       module = "persistence",
@@ -105,7 +99,6 @@ M.config = function()
         )
       end,
       event = "BufRead",
-      ft = { "typescript", "typescriptreact" },
     },
     {
       "lukas-reineke/indent-blankline.nvim",
