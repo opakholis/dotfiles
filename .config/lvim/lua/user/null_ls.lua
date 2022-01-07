@@ -11,22 +11,40 @@ M.config = function()
     debounce = 150,
     save_after_format = false,
     sources = {
+      nls.builtins.formatting.prettierd.with {
+        condition = function(utils)
+          return not utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
+      nls.builtins.formatting.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
       nls.builtins.formatting.prettierd,
       nls.builtins.formatting.stylua,
       -- nls.builtins.formatting.goimports,
       -- nls.builtins.formatting.cmake_format,
       -- nls.builtins.formatting.sqlformat,
+      nls.builtins.diagnostics.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
+      -- nls.builtins.diagnostics.shellcheck,
       nls.builtins.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
-      nls.builtins.diagnostics.eslint_d,
-      nls.builtins.diagnostics.shellcheck,
       -- nls.builtins.diagnostics.luacheck,
       -- nls.builtins.diagnostics.vint,
-      -- nls.builtins.diagnostics.markdownlint.with {
-      --   filetypes = { "markdown" },
-      -- },
-      -- nls.builtins.diagnostics.vale.with {
-      --   filetypes = { "markdown" },
-      -- },
+      nls.builtins.code_actions.eslint_d.with {
+        condition = function(utils)
+          return utils.root_has_file { ".eslintrc", ".eslintrc.js" }
+        end,
+        prefer_local = "node_modules/.bin",
+      },
+      nls.builtins.code_actions.shellcheck,
     },
   }
 end
