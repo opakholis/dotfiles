@@ -1,12 +1,12 @@
 local M = {}
 
 M.config = function()
-  local status_ok, bl = pcall(require, "indent_blankline")
+  local status_ok, indent_blankline = pcall(require, "indent_blankline")
   if not status_ok then
     return
   end
 
-  bl.setup {
+  indent_blankline.setup {
     enabled = true,
     bufname_exclude = { "README.md" },
     buftype_exclude = { "terminal", "nofile" },
@@ -40,23 +40,15 @@ M.config = function()
       "alpha",
       "log",
       "gitcommit",
-      "vimwiki",
       "markdown",
       "json",
       "txt",
-      "vista",
       "NvimTree",
       "git",
       "TelescopePrompt",
-      "undotree",
-      "flutterToolsOutline",
-      "org",
-      "orgagenda",
       "help",
-      "startify",
       "dashboard",
       "packer",
-      "neogitstatus",
       "NvimTree",
       "Outline",
       "Trouble",

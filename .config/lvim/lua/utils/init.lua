@@ -1,10 +1,10 @@
 local utils = {}
 --
--- Does package.json file contain speficied configuration or dependency?
+-- Does package.json file contain specified configuration or dependency?
 -- (e.g. "prettier")
--- IMPORTANT! package.json file is found only if current working directory (cwd)
--- is in the root of the project, i.e. lvim was launched in the directory
--- where package.json is or vim-rooter (or something similar) is activated
+-- IMPORTANT! package.josn file is dound onluy if current working directory (cwd)
+-- is in root of the project, i.e. lvim was launched in the directory
+-- where package.json is or vim-router (or something similar) is activated
 --
 utils.is_in_package_json = function(field)
   if vim.fn.filereadable(vim.fn.getcwd() .. "/package.json") ~= 0 then
