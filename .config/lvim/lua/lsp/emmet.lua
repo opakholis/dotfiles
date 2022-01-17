@@ -10,7 +10,7 @@
 --
 -- ============================================================================
 --
-local utils = require "user.utils"
+local utils = require "utils"
 -- Skip configuring emmet language server client if project
 -- does not look like a web project
 if not utils.is_web_project() then
@@ -35,15 +35,11 @@ if not lspconfig.emmet_ls then
     default_config = {
       cmd = { vim.fn.stdpath "data" .. "/lsp_servers/emmet_ls/node_modules/.bin/emmet-ls", "--stdio" },
       filetypes = {
-        "aspnetcorerazor",
         "css",
-        "django-html",
-        "gohtml",
         "html",
         "less",
         "php",
         "postcss",
-        "razor",
         "sass",
         "scss",
         "svelte",

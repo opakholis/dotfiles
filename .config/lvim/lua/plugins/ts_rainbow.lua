@@ -9,18 +9,6 @@ M.config = function()
   ts_rainbow.setup {
     autopairs = { enable = true },
     autotag = { enable = true },
-    ensure_installed = {
-      "html",
-      "css",
-      "json",
-      "tsx",
-      "php",
-      "python",
-      "yaml",
-      "lua",
-      "javascript",
-      "typescript",
-    }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = { enable = true },
     rainbow = {
       enable = true,
