@@ -72,26 +72,3 @@ alias panes="~/.color-toys/panes"
 alias pipes0="~/.color-toys/pipes1"
 alias pipes1="~/.color-toys/pipes2"
 alias pipes1-slim="~/.color-toys/pipes2-slim"
-
-# gpg key
-export GPG_TTY=$(tty)
-
-# android development
-# export PATH="$PATH:opt/flutter/bin"
-export ANDROID_HOME=$HOME/Android/Sdk
-
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-# export REACT_EDITOR="nvim"
-
-# Less Colors for Man Pages
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
-export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\e[0m'           # end mode
-export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\e[0m'           # end underline
-export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
