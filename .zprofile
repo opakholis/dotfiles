@@ -7,8 +7,9 @@ alias c="clear"
 alias q="exit"
 alias cd="z"
 alias pg="gping 1.1.1.1"
-alias remove="sudo pacman -Rcns"
-alias update="sudo pacman -Syyu"
+alias pacrem="sudo pacman -Rns"
+alias pacupg="sudo pacman -Syyu"
+alias pacrmorphans="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias update-fc="sudo fc-cache -fv"
 alias trimall="sudo fstrim -va"
 alias merge='xrdb merge'
@@ -20,10 +21,12 @@ alias bench.sh='curl -Lso- bench.sh | bash'
 alias reflector="sudo reflector --verbose --connection-timeout 2 --threads 10 --country Indonesia --latest 100 --age 24 --score 50 --sort rate --fastest 6 --save /etc/pacman.d/mirrorlist"
 
 # exa
-# details information about shortcut https://the.exa.website/docs/command-line-options
-alias lsa="exa -alh"
-alias lst="exa -T --icons"
-alias lsl="exa -lhTL=2 --icons"
+# [-l = long], [-h = header],
+# [-T = tree], [-L = level]
+# for details information https://the.exa.website/docs/command-line-options
+alias ls="exa --icons"
+alias lsl="exa -lh --icons"
+alias lst="exa -TL=2 --icons"
 
 # git
 alias g="git"
@@ -42,6 +45,10 @@ alias yta-aac="yt-dlp --extract-audio --audio-format aac --audio-quality 0 "
 alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 --embed-thumbnail --audio-quality 0 "
 alias ytv-best='yt-dlp -f '\''bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio'\'' --merge-output-format mp4 '
 alias ytv-hd='yt-dlp -f '\''bestvideo[ext=mp4][height<=1080][fps<=?30][vcodec!=?vp9]+bestaudio/bestvideo+bestaudio'\'' --merge-output-format mp4 '
+
+# Translate
+alias trans-id="trans :id -b"
+alias trans-en="trans :en -b"
 
 # LAMP
 alias httpd-start="sudo systemctl start httpd mariadb"
