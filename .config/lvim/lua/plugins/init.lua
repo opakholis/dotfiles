@@ -6,7 +6,7 @@ require("plugins.builtin").config()
 -- Lualine
 require("plugins.lualine").config()
 -- Nvim-tree
-require("plugins.nvim-tree").config()
+require("plugins.nvimtree").config()
 -- Treesitter
 require("plugins.treesitter").config()
 --
@@ -84,10 +84,14 @@ lvim.plugins = {
   {
     "nvim-telescope/telescope-fzy-native.nvim",
   },
+  --
   -- Themes
   --
   {
-    "Mofiqul/dracula.nvim",
+    "catppuccin/nvim",
+    config = function()
+      require("themes.catppuccin").config()
+    end,
   },
   {
     "windwp/nvim-ts-autotag",

@@ -5,7 +5,7 @@ lvim.format_on_save = true
 lvim.leader = "space"
 
 -- Theme/ColorScheme
-lvim.colorscheme = "dracula"
+lvim.colorscheme = "catppuccin"
 
 -- Debug
 -- lvim.log.level = "warn"
