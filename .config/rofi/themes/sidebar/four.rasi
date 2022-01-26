@@ -8,8 +8,8 @@
  */
 
 configuration {
-    disable-history:                false;
-    fullscreen:                     false;
+  disable-history:        false;
+  fullscreen:             false;
 	hide-scrollbar: 				true;
 	sidebar-mode: 					false;
 }
@@ -17,8 +17,8 @@ configuration {
 @import "colors.rasi"
 
 * {
-    background-color:               @background;
-    text-color:                     @foreground;
+  background-color:               @background;
+  text-color:                     @foreground;
 }
 
 window {
@@ -26,19 +26,19 @@ window {
     border:                         2px;
     border-radius:                  0;
     border-color:                   @foreground;
-    width:                          358px;
-    location:                       South;
-    x-offset:                       0px;
-    y-offset:                       -15px;
+    width:                          65px;
+    location:                       east;
+    x-offset:                       -15px;
+    y-offset:                       0px;
 }
 
 listview {
-    lines:							6;
+    lines:							4;
     margin:                         5px;
     spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
-    layout:                         horizontal;
+    layout:                         vertical;
 }
 
 mainbox {
@@ -49,16 +49,16 @@ mainbox {
 element {
     background-color:               @foreground;
     text-color:                     @text;
-    orientation:                    horizontal;
+    orientation:                    vertical;
     border-radius:                  0;
 }
 
 element-text {
 	font:							"feather 12";
     expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         20px 20px 20px 0px;
+    horizontal-align:               0.5;
+    vertical-align:                 0;
+    margin:                         2px 2px 15px 2px;
 }
 
 element normal.urgent,
@@ -79,7 +79,7 @@ element selected {
     text-color:                     @background;
     border:                  		0px;
     border-radius:                  0;
-    border-color:                  	@background-light;
+    border-color:                  	@border;
 }
 
 element selected.urgent {

@@ -19,12 +19,11 @@ popup_during_fullscreen smart
 exec_always --no-startup-id parcellite &
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 "betterlockscreen -l dim" "" --timer 3600 "systemctl suspend" "" &
 exec_always --no-startup-id ~/.screenlayout/tn.sh
 exec --no-startup-id source ~/.fehbg
 exec --no-startup-id dunst
-#exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -55,7 +54,7 @@ bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext           exec --no-startup-id playerctl next
 bindsym XF86AudioPrev           exec --no-startup-id playerctl previous
 bindsym XF86AudioStop           exec --no-startup-id playerctl stop
-bindsym $super+M                exec --no-startup-id $HOME/.config/rofi/scripts/$(cat ~/.scripts/music-controller/default).sh
+bindsym $super+M                exec --no-startup-id $HOME/.config/rofi/scripts/spotify.sh
 
 # volume
 bindsym XF86AudioRaiseVolume    exec --no-startup-id $HOME/.scripts/notify/change-volume up
