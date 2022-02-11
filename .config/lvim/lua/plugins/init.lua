@@ -49,9 +49,7 @@ lvim.plugins = {
   {
     "github/copilot.vim",
     config = function()
-      vim.g.copilot_no_tab_map = true
-      vim.g.copilot_assume_mapped = true
-      vim.g.copilot_tab_fallback = ""
+      require("plugins.copilot").config()
     end,
     disable = not lvim.builtin.sell_your_soul_to_devil,
   },
@@ -89,9 +87,6 @@ lvim.plugins = {
   --
   {
     "catppuccin/nvim",
-    config = function()
-      require("themes.catppuccin").config()
-    end,
   },
   {
     "windwp/nvim-ts-autotag",
