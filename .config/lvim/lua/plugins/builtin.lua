@@ -4,7 +4,8 @@ M.config = function()
   --
   -- Telescope
   --
-  lvim.builtin.telescope.defaults.layout_config = require("plugins.telescope").layout_config()
+  local user_telescope = require "plugins.telescope"
+  lvim.builtin.telescope.defaults.layout_config = user_telescope.layout_config()
   lvim.builtin.telescope.defaults.file_ignore_patterns = {
     "vendor/*",
     "node_modules/*",
