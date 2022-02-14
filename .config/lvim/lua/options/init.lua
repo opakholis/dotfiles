@@ -22,3 +22,6 @@ lvim.builtin.sell_your_soul_to_devil = true
 
 -- fancy rename
 lvim.builtin.fancy_rename = true
+
+-- enable/disable editorconfig
+lvim.builtin.editorconfig = true

@@ -34,6 +34,14 @@ lvim.plugins = {
     event = "InsertEnter",
   },
   --
+  -- General
+  --
+  {
+    "editorconfig/editorconfig-vim",
+    event = "BufRead",
+    disable = not lvim.builtin.editorconfig,
+  },
+  --
   -- Movement
   --
   {
