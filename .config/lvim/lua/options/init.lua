@@ -8,20 +8,16 @@ lvim.leader = "space"
 lvim.colorscheme = "catppuccin"
 
 -- Debug
--- lvim.log.level = "warn"
+lvim.log.level = "warn"
 
 -- Nvim
 require("options.neovim").config()
 
--- Plugins
+-- Builtin plugins
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 
--- if you want microsoft to abuse your soul
-lvim.builtin.sell_your_soul_to_devil = true
-
--- fancy rename
-lvim.builtin.fancy_rename = true
-
--- enable/disable editorconfig
-lvim.builtin.editorconfig = true
+lvim.builtin.editorconfig = true -- enable/disable editorconfig
+lvim.builtin.fancy_rename = true -- fancy rename
+lvim.builtin.fancy_hlargs = true -- fancy highlight args (CPU usage warning)
+lvim.builtin.sell_your_soul_to_devil = true -- if you want microsoft to abuse your soul

@@ -115,6 +115,14 @@ lvim.plugins = {
     event = "BufRead",
   },
   {
+    "m-demare/hlargs.nvim",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("plugins.hlargs").config()
+    end,
+    disable = not lvim.builtin.fancy_hlargs,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     setup = function()
       vim.g.indent_blankline_char = "▏"
