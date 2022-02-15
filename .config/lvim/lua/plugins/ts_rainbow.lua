@@ -6,20 +6,21 @@ M.config = function()
     return
   end
 
+  -- fetch colors from catppuccin API
+  local cp_api = require "catppuccin.api.colors"
+  local colors = cp_api.get_colors()
+
   ts_rainbow.setup {
-    autopairs = { enable = true },
-    autotag = { enable = true },
-    highlight = { enable = true },
     rainbow = {
       enable = true,
-      extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-      max_file_lines = nil, -- Do not enable for files with more than n lines, int
+      disable = { "html" },
+      extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+      max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
       colors = {
-        "#8be9fd",
-        "#ffb86c",
-        "#ff79c6",
+        colors.mauve,
+        colors.sky,
+        colors.green,
       }, -- table of hex strings
-      -- termcolors = {} -- table of colour name strings
     },
   }
 end
