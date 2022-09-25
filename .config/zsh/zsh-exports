@@ -1,0 +1,61 @@
+# path
+export PATH=~/.local/bin/:$PATH
+export PATH=~/.local/share/cargo/bin/:$PATH
+
+# cleaning up home folder
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+
+# android dev, espesially for react native
+export DEV_HOME="$HOME/Dev"
+export ANDROID_SDK_ROOT=$DEV_HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# export DOTFILES_DIR="$DEV_HOME/Rice/dotfiles"
+
+# default apps
+export EDITOR="lvim"
+export TERMINAL="st"
+export BROWSER="firefox"
+
+# default editor
+export EDITOR=lvim
+export VISUAL=lvim
+
+# manual
+export MANPAGER="lvim +Man!"
+export MANWIDTH=999
+
+# override qt themes
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# command history
+HISTFILE="$HOME/.cache/.zhistory" # Store history here
+HISTSIZE=11000                    # Max. entries to keep in memory
+SAVEHIST=10000                    # Max. entries to save to file
+
+setopt BANG_HIST              # Treat the '!' character specially during expansion.
+setopt APPEND_HISTORY         # Append to history, rather than overwriting
+setopt EXTENDED_HISTORY       # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY          # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS       # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS      # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE      # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY            # Don't execute immediately upon history expansion.
+
+# pnpm
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# fly.io
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# Audio volume changer using alsa mixer
+
+# icons variable
+DIR=~/.config/dunst/icons/
+
+current_vol() {
+	amixer -D pulse get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
+}
+
+is_mute() {
+	amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off
+}
+
+notify() {
+	volume="$(current_vol)"
+
+	if [ "$volume" -eq 0 ]; then
+		icon_name="$DIR/volume-muted.png"
+	elif [ "$volume" -lt 10 ]; then
+		icon_name="$DIR/volume-low.png"
+	elif [ "$volume" -lt 30 ]; then
+		icon_name="$DIR/volume-low.png"
+	elif [ "$volume" -lt 70 ]; then
+		icon_name="$DIR/volume-medium.png"
+	else
+		icon_name="$DIR/volume-high.png"
+	fi
+	notify-send -i "$icon_name" -r 2593 -u normal "$volume"%
+}
+
+case $1 in
+--up)
+	amixer -D pulse set Master on -q
+	# +5%
+	amixer -D pulse sset Master 5%+ -q
+	notify
+	;;
+--down)
+	amixer -D pulse set Master on -q
+	# -5%
+	amixer -D pulse sset Master 5%- -q
+	notify
+	;;
+--mute)
+	amixer -D pulse set Master 1+ toggle -q
+	if is_mute &>/dev/null; then
+		icon_name="$DIR/volume-muted.png"
+		notify-send -i "$icon_name" -r 2593 -u normal " Muted! "
+	else
+		notify
+	fi
+	;;
+esac

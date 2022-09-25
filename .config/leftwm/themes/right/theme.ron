@@ -1,0 +1,9 @@
+( 
+    border_width: 1,
+    margin: [5, 5, 5, 5],
+    // workspace_margin: 2,
+    default_border_color: "#1e1e2e",
+    floating_border_color: "#f2cdcd",
+    focused_border_color: "#cba6f7",
+    outer_border_color: "#b4befe",
+ )

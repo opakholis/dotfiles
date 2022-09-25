@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+maim="maim --capturebackground --hidecursor"
+
+# filename
+filename="maim-$(date +%Y%m%d_%H%M%S)"
+
+tempfile="/tmp/$filename.png"
+savefile="/home/$USER/Pictures/maim/$filename.png"
+
+notify() {
+	# Check if users cancel the screenshot
+	if [ -f "$tempfile" ]; then
+		notify-send -i "$tempfile" "Screenshot" "Copied to clipboard!"
+	elif [ -f "$savefile" ]; then
+		notify-send -i "$savefile" "Screenshot" "Saved and copied to clipboard!"
+	else
+		notify-send "Wopsshh" "Screenshot canceled by user"
+		exit 0
+	fi
+}
+
+case $1 in
+--area)
+	$maim -s "$tempfile" && xclip -selection c -t image/png <"$tempfile"
+	notify &
+
+	sleep 1
+	rm "$tempfile"
+	;;
+
+--full)
+	$maim "$tempfile" && xclip -selection c -t image/png <"$tempfile"
+	notify &
+
+	sleep 1
+	rm "$tempfile"
+	;;
+
+--save-area)
+	$maim -s "$savefile" && xclip -selection c -t image/png <"$savefile"
+	notify &
+	;;
+
+--save-full)
+	$maim "$savefile" && xclip -selection c -t image/png <"$savefile"
+	notify &
+	;;
+
+esac
