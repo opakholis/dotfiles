@@ -28,4 +28,4 @@ In every file there is its path.
 notification ~ wired
 ```
 
-![workspace](https://raw.githubusercontent.com/opxop/dotfiles/main/.captures/scrot.png)
+![workspace](https://raw.githubusercontent.com/opakholis/dotfiles/leftwm/.captures/maim-20220925_163832.png)
