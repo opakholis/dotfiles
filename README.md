@@ -15,24 +15,17 @@ In every file there is its path.
 ### Now i use:
 
 ```sh
-          os ~ arch
+          os ~ artix
           sh ~ zsh
-          wm ~ i3-gaps
+          wm ~ leftwm
           dm ~ lightdm
           fm ~ thunar
-        term ~ kitty/st
-      editor ~ code/lvim
+        term ~ alacritty/st
+      editor ~ code/nvim
      browser ~ firefox
     launcher ~ rofi
   compositor ~ picom
-notification ~ dunst
+notification ~ wired
 ```
 
 ![workspace](https://raw.githubusercontent.com/opxop/dotfiles/main/.captures/scrot.png)
-
-### Shoortzz
-
-- [owl4ce](https://github.com/owl4ce)
-- [bandithijo](https://github.com/bandithijo)
-- [adi1090x](https://github.com/adi1090x)
-- [abzcoding](https://github.com/abzcoding)
