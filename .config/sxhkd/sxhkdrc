@@ -1,0 +1,38 @@
+#
+# independent hotkeys
+#
+
+# reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd; notify-send "  SXHKD reloaded"
+
+# brightness
+XF86MonBrightness{Up,Down}
+  ~/.config/leftwm/scripts/changebrightness {--up,--down}
+
+# media keys
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+  ~/.config/leftwm/scripts/changevolume {--up,--down,--mute}
+
+XF86Audio{Prev,Next}
+	playerctl {previous,next}
+
+XF86Audio{Play,Stop}
+	playerctl {play-pause,stop}
+
+# printscreen
+
+# save file
+Print
+   ~/.config/leftwm/scripts/screenshot --save-full
+
+shift + Print
+   ~/.config/leftwm/scripts/screenshot --save-area
+
+# clipbnoard
+super + u
+   ~/.config/leftwm/scripts/screenshot --full
+
+super + shift + u
+   ~/.config/leftwm/scripts/screenshot --area
+
