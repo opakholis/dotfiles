@@ -43,7 +43,9 @@
     layout_mode: Tag, // Workspace
     insert_behavior: Bottom,
     scratchpad: [],
-    window_rules: [],
+    window_rules: [
+        (window_title: "Picture-in-Picture", spawn_as_type: Normal),
+    ],
     disable_current_tag_swap: true,
     disable_tile_drag: true,
     disable_window_snap: true,
