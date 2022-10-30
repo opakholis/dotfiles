@@ -62,7 +62,7 @@ export FZF_DEFAULT_OPTS='
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 # [ -f "$ZDOTDIR"/completion/_bun ] && fpath+="$ZDOTDIR/completion/"
-[ -f "$ZDOTDIR"/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+# [ -f "$ZDOTDIR"/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 # [ -f "$ZDOTDIR"/completion/_pscale ] && fpath+="$ZDOTDIR/completion/"
 # [ -f "$ZDOTDIR"/completion/_zoxide ] && fpath+="$ZDOTDIR/completion/"
 
