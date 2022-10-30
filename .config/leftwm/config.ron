@@ -98,6 +98,24 @@
         (command: MoveToTag, value: "7", modifier: ["modkey", "Shift"], key: "7"),
         (command: MoveToTag, value: "8", modifier: ["modkey", "Shift"], key: "8"),
         (command: MoveToTag, value: "9", modifier: ["modkey", "Shift"], key: "9"),
+         // multimedia
+        (command: Execute, value: "playerctl play-pause", modifier: [], key: "XF86XK_AudioPlay"),
+        (command: Execute, value: "playerctl stop", modifier: [], key: "XF86XK_AudioStop"),
+        (command: Execute, value: "playerctl previous", modifier: [], key: "XF86XK_AudioPrev"),
+        (command: Execute, value: "playerctl next", modifier: [], key: "XF86XK_AudioNext"),
+        // brightness
+        (command: Execute, value: "~/.config/leftwm/scripts/changebrightness --up", modifier: [], key: "XF86XK_MonBrightnessUp"),
+        (command: Execute, value: "~/.config/leftwm/scripts/changebrightness --down", modifier: [], key: "XF86XK_MonBrightnessDown"),
+        // volume
+        (command: Execute, value: "~/.config/leftwm/scripts/changevolume --up", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+        (command: Execute, value: "~/.config/leftwm/scripts/changevolume --down", modifier: [], key: "XF86XK_AudioLowerVolume"),
+        (command: Execute, value: "~/.config/leftwm/scripts/changevolume --mute", modifier: [], key: "XF86XK_AudioMute"),
+        // screenshot
+        (command: Execute, value: "~/.config/leftwm/scripts/screenshot --save-full", modifier: [], key: "Print"),
+        (command: Execute, value: "~/.config/leftwm/scripts/screenshot --save-area", modifier: ["Shift"], key: "Print"),
+        (command: Execute, value: "~/.config/leftwm/scripts/screenshot --full", modifier: ["modkey"], key: "u"),
+        (command: Execute, value: "~/.config/leftwm/scripts/screenshot --area", modifier: ["modkey", "Shift"], key: "u"),
+
     ],
     state_path: None,
 )

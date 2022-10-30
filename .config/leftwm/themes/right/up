@@ -11,11 +11,6 @@ ln -s "$SCRIPTPATH"/down /tmp/leftwm-theme-down
 # set the theme.toml config
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
-# keybindings daemon (if it exist)
-if [ -x "$(command -v sxhkd)" ]; then
-	sxhkd &
-fi
-
 # compositor
 if [ -x "$(command -v picom)" ]; then
 	picom &>/dev/null &
@@ -29,7 +24,7 @@ fi
 
 # set background
 if [ -x "$(command -v feh)" ]; then
-	feh --no-fehbg --bg-scale "$SCRIPTPATH"/background.png
+	feh --no-fehbg --bg-scale "$SCRIPTPATH"/kyoto_streets.png
 fi
 
 # cipboard manager

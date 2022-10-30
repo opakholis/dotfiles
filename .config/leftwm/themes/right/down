@@ -13,5 +13,4 @@ leftwm-command "UnloadTheme"
 pkill greenclip
 pkill polybar
 pkill picom
-pkill sxhk
 pkill wired
