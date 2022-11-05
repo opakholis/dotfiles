@@ -42,7 +42,9 @@
     ],
     layout_mode: Tag, // Workspace
     insert_behavior: Bottom,
-    scratchpad: [],
+    scratchpad: [
+        (name: "St", value: "st", x: 860, y: 390, height: 300, width: 200),
+    ],
     window_rules: [
         (window_title: "Picture-in-Picture", spawn_as_type: Normal),
     ],
@@ -79,6 +81,7 @@
         (command: DecreaseMainWidth, value: "1", modifier: ["modkey", "Shift"], key: "h"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
         (command: ToggleFloating, value: "", modifier: ["modkey"], key: "t"),
+        (command: ToggleScratchPad, value: "St", modifier: ["modkey"], key: "s"),
         // tags
         (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
         (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
