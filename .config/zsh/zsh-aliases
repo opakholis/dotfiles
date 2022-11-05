@@ -1,6 +1,6 @@
 # contains aliases and variables which are environment-indipendent
 
-alias _="sudo"
+alias doas="sudo"
 alias c="clear"
 alias q="exit"
 
@@ -14,14 +14,6 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-
-# confirm before overwriting something
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
-alias mkd="mkdir -p"
 
 # easier to read disk
 alias df='df -h'     # human-readable sizes
@@ -30,15 +22,6 @@ alias free='free -m' # show sizes in MB
 # pacman
 alias update="sudo pacman -Syyu"
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
-# update new fonts
-alias update-fc="sudo fc-cache -fv"
-
-# trim ssd
-alias trimall="sudo fstrim -va"
-
-# search content with ripgrep
-alias rg="rg --sort path"
 
 # xresources update
 alias merge="xrdb -merge ~/.Xresources"
@@ -50,7 +33,7 @@ alias aria='aria2c -s16 -x16'
 
 # benchmark(?)
 alias bench.sh='wget -qO- bench.sh | bash'
-alias fet.sh="info='n os wm kern pkgs sh mem term col n' fet.sh"
+alias fet.sh="info='n sh os wm up mem kern pkgs term col n' fet.sh"
 
 # exa
 alias ls="exa --icons"
@@ -67,12 +50,6 @@ alias v="lvim"
 alias yta-mp3="yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 "
 alias ytv-best='yt-dlp -f '\''bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio'\'' --merge-output-format mp4 '
 alias ytv-hd='yt-dlp -f '\''bestvideo[ext=mp4][height<=1080][fps<=?30][vcodec!=?vp9]+bestaudio/bestvideo+bestaudio'\'' --merge-output-format mp4 '
-
-alias yt="check_vars_exists=0 ytfzf"
-
-# Translate
-alias trans-id="trans :id -b"
-alias trans-en="trans :en -b"
 
 # Git stuff
 alias g="git"
@@ -104,7 +81,3 @@ alias vimrc="$EDITOR $DEV_HOME/Rice/lvim/"
 alias vdot="$EDITOR $DEV_HOME/Rice/dotfiles/"
 alias vleft="$EDITOR ~/.config/leftwm/"
 
-# dotfiles
-# alias dotfiles="git --git-dir=$DOTFILES_DIR/ --work-tree=$HOME"
-# alias dot="git --git-dir=$DOTFILES_DIR/ --work-tree=$HOME"
-# alias dotuntracked='dotfiles ls-files --others --exclude-standard'
