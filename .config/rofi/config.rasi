@@ -2,7 +2,7 @@ configuration {
     modi: "drun,calc,emoji";
     font: "Iosevka 10";
     show-icons: true;
-    icon-theme: "Fluent";
+    icon-theme: "Reversal-blue-dark";
     terminal: "st";
     drun-display-format: "{name}";
     disable-history: false;
