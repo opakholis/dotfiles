@@ -5,30 +5,13 @@
 # set root privileges first if necessary
 # sudo chmod u+s $(command -v brightnessctl)
 
-# icons variable
-DIR=~/.config/dunst/icons/
-
 current_brightness() {
 	brightnessctl i | grep '%' | cut -d '(' -f 2 | cut -d '%' -f 1
 }
 
 notify() {
 	brightness="$(current_brightness)"
-
-	if [ "$brightness" -eq 0 ]; then
-		icon_name="$DIR/brightness-off.png"
-	elif [ "$brightness" -lt 10 ]; then
-		icon_name="$DIR/brightness-low.png"
-	elif [ "$brightness" -lt 30 ]; then
-		icon_name="$DIR/brightness-medium.png"
-	elif [ "$brightness" -lt 70 ]; then
-		icon_name="$DIR/brightness-medium.png"
-	elif [ "$brightness" -lt 100 ]; then
-		icon_name="$DIR/brightness-high.png"
-	else
-		icon_name="$DIR/brightness-full.png"
-	fi
-	notify-send -i "$icon_name" -r 2593 -u normal "$brightness"%
+	notify-send -r 2593 "   $brightness% "
 }
 
 case $1 in
