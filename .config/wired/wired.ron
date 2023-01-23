@@ -2,7 +2,7 @@
     max_notifications: 5,
     timeout: 10000, // 10 sec timeout
     poll_interval: 16,  // 16ms ~= 60hz / 7ms ~= 144hz.
-    idle_threshold: 600, // 600 sec = 10 min
+    idle_threshold: 300, // 600 sec = 10 min
 
     history_length: 10,
     replacing_resets_timeout: true,
@@ -20,7 +20,7 @@
         (
             name: "root",
             parent: "",
-            offset: Vec2(x: -22.0, y: 44.0),
+            offset: Vec2(x: -22.0, y: 52.0),
             hook: Hook(parent_anchor: TR, self_anchor: TR),
             // https://github.com/Toqozz/wired-notify/wiki/NotificationBlock
             params: NotificationBlock((
@@ -28,10 +28,10 @@
                 border_width: 1.0,
                 border_rounding: 6.0,
                 gap: Vec2(x: 0.0, y: 10.0),
-                background_color: Color(hex: "#11111b"),
-                border_color: Color(hex: "#cba6f7"),
-                border_color_low: Color(hex: "#89b4fa"),
-                border_color_critical: Color(hex: "#f38ba8"),
+                background_color: Color(hex: "#181825"),
+                border_color: Color(hex: "#b4befe"),
+                border_color_low: Color(hex: "#6c7086"),
+                border_color_critical: Color(hex: "#fab387"),
                 notification_hook: Hook(parent_anchor: BR, self_anchor: TR),
             )),
         ),
@@ -45,7 +45,7 @@
                 text: "%s",
                 font: "Iosevka Nerd Font 11",
                 ellipsize: End,
-                color: Color(hex: "#f8f8f2"),
+                color: Color(hex: "#cdd6f4"),
                 padding: Padding(left: 12.0, right: 12.0, top: 12.0, bottom: 12.0),
                 dimensions: (
                     width: (min: 0, max: 150), 
