@@ -59,3 +59,7 @@ export PATH="$PNPM_HOME:$PATH"
 # fly.io
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
