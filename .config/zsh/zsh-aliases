@@ -1,83 +1,78 @@
-# contains aliases and variables which are environment-indipendent
-
-alias doas="sudo"
-alias c="clear"
-alias q="exit"
+# check if a command exists
+_exists() {
+  command -v $1 > /dev/null 2>&1
+}
 
 # z is zexoide
-alias cd="z"
+if _exists zoxide; then
+  alias cd="z"
+fi
+
+# better ls
+if _exists lsd; then
+  alias ls="lsd"
+fi
+
+# cat with syntax highlighting
+if _exists bat; then
+  alias cat="bat"
+fi
+
+# lunarvim
+if _exists lvim; then
+  alias vi="lvim"
+  alias v="lvim"
+fi
+
+# yt download
+if _exists yt-dlp; then
+  alias yta-mp3="yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 "
+  alias ytv-best='yt-dlp -f '\''bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio'\'' --merge-output-format mp4 '
+  alias ytv-hd='yt-dlp -f '\''bestvideo[ext=mp4][height<=1080][fps<=?30][vcodec!=?vp9]+bestaudio/bestvideo+bestaudio'\'' --merge-output-format mp4 '
+fi
+
+# enable aliases to be sudo’ed
+alias sudo="sudo "
+
+# the best aliases i've ever seen
+alias c="clear"
+alias q="exit"
 
 # update zsh-plugins
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
-# navigate up the directory
+# rabit hole navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-# easier to read disk
-alias df='df -h'     # human-readable sizes
-alias free='free -m' # show sizes in MB
-
-# pacman
-alias update="sudo pacman -Syyu"
+# remove orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
-# xresources update
-alias merge="xrdb -merge ~/.Xresources"
+# st update
 alias st-reload="kill -USR1 $(pidof st)"
 
 # download
 alias wget="wget -c"
-alias aria='aria2c -s16 -x16'
+alias aria="aria2c -s16 -x16"
 
-# benchmark(?)
-alias bench.sh='wget -qO- bench.sh | bash'
+# somethin like neofetch u can said
 alias fet.sh="info='n sh os wm up mem kern pkgs term col n' fet.sh"
 
-# exa
-alias ls="exa --icons"
-alias lsl="exa -lh --icons"
-alias lst="exa -TL=2 --icons"
-
-# Neo(vim)
-# alias nvim=="lvim"
-alias vim="lvim"
-alias vi="lvim"
-alias v="lvim"
-
-# yt-dl but noice fork
-alias yta-mp3="yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 "
-alias ytv-best='yt-dlp -f '\''bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio'\'' --merge-output-format mp4 '
-alias ytv-hd='yt-dlp -f '\''bestvideo[ext=mp4][height<=1080][fps<=?30][vcodec!=?vp9]+bestaudio/bestvideo+bestaudio'\'' --merge-output-format mp4 '
-
-# Git stuff
+# not sure what this is
 alias g="git"
 alias gg="lazygit"
 alias ga="git add"
 alias gc="git commit"
-alias gd="git diff"
-alias gr="git remote"
-alias gb="git branch"
 alias gl="git pull"
 alias gp="git push"
+alias glo="git pull origin"
+alias gpo="git push origin"
 alias gst="git status"
 alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gcl="git clone"
-alias gac="git add . && git commit"
-alias gpull="git pull origin"
-alias gpush="git push origin"
 
-# bluetooth service
-alias bt="sudo rc-service bluetoothd start"
-alias bt-stop="sudo rc-service bluetoothd stop"
-alias bt-status="sudo rc-service bluetoohd status"
-alias bt-restart="sudo rc-service bluetoothd restart"
-
-# important configuration files
-alias vz="$EDITOR ~/.config/zsh/"
-alias vimrc="$EDITOR $DEV_HOME/Rice/lvim/"
-alias vdot="$EDITOR $DEV_HOME/Rice/dotfiles/"
-alias vleft="$EDITOR ~/.config/leftwm/"
-
+# open dir in pde
+alias vimrc="$EDITOR $DEV_HOME/Comfy/lvim/"
+alias vdot="$EDITOR $DEV_HOME/Comfy/dotfiles/"
