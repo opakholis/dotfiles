@@ -1,7 +1,7 @@
 export ZDOTDIR="$HOME/.config/zsh"
 
 # TypwWritten Customization
-TYPEWRITTEN_SYMBOL="»"
+TYPEWRITTEN_SYMBOL="▲"
 TYPEWRITTEN_DISABLE_RETURN_CODE=true
 
 # some useful options (man zshoptions)
@@ -47,24 +47,19 @@ bindkey "^k" up-line-or-beginning-search   # Up
 bindkey "^j" down-line-or-beginning-search # Down
 
 # fzf
-export FZF_DEFAULT_OPTS='
-  --color fg:#d9e0ee
-  --color bg+:#f5e0dc,fg+:#6e6c7e,hl:#6e6c7e,hl+:#1e1e2e,gutter:#3a404c
-  --color pointer:#6e6c7e,info:#f5c2e7
-  --border
-  --color border:#ddb6f2'
+export FZF_DEFAULT_OPTS="\
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+  --border \
+  --color border:#f5c2e7"
 
 # fzf
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
-# tabtab source for packages (pnpm)
-# [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
 # [ -f "$ZDOTDIR"/completion/_bun ] && fpath+="$ZDOTDIR/completion/"
-# [ -f "$ZDOTDIR"/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 # [ -f "$ZDOTDIR"/completion/_pscale ] && fpath+="$ZDOTDIR/completion/"
-# [ -f "$ZDOTDIR"/completion/_zoxide ] && fpath+="$ZDOTDIR/completion/"
 
 eval "$(fnm env)"
 eval "$(zoxide init zsh)"
